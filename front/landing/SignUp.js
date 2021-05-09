@@ -10,7 +10,7 @@ import {
     Platform
 } from "react-native"
 import { LinearGradient } from 'expo-linear-gradient'
-import { COLORS, SIZES, FONTS, icons, images } from "../constants"
+import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
 
 const SignUp = ({navigation}) => {
     const [showPassword, setShowPassword] = useState(false)
