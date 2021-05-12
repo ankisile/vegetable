@@ -16,6 +16,7 @@
  import SignUp from "./front/landing/SignUp";
  import SignIn from "./front/landing/SignIn";
  import Tutorial from "./front/landing/Tutorial";
+ import AppStack from './navigation/AppStack';
 import TabScreen from './front/TabScreen';
 import MarketMain from './front/pointMarket/MarketMain';
 import DonateMain from './front/pointMarket/donation/DonateMain';
@@ -62,6 +63,7 @@ import MakequestDetail from './front/main/MakeQuestDetail';
                 <Stack.Screen name="SignIn" component={SignIn} />   
                 <Stack.Screen name="SignUp" component={SignUp} />
                 <Stack.Screen name="Tutorial" component={Tutorial}/>
+                <Stack.Screen name="AppMain" component={AppStack} />
        //have to modify
        <Stack.Screen name="TabScreen" component={TabScreen} navigation={this.props.navigation} />
                     <Stack.Screen name="MarketMain" component={MarketMain} navigation={this.props.navigation} />

@@ -19,3 +19,4 @@ function MarketMain({ navigation }) {
 }
 
 export default MarketMain
+

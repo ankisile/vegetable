@@ -17,8 +17,8 @@ export default {
     focus,
     onboarding1,
     onboarding2,
-    onboarding3
-,
+    onboarding3,
+
     // Dummy
     usFlag
 }

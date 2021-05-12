@@ -130,7 +130,7 @@ const SignUp = ({navigation}) => {
                 </View>
             </View>
         )
-    }
+    } 
 
     function renderButton() {
         return (

@@ -2,7 +2,8 @@ import React from 'react'
 import { Button,View,Text, } from 'react-native'
 
 
-function sample({navigation}) {
+function QuestMain({navigation}) {
+
     return (
            <View>
             <Text>검색창 / +기호 등등  </Text>
@@ -27,4 +28,4 @@ function sample({navigation}) {
     )
 }
 
-export default sample
+export default QuestMain
