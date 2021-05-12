@@ -27,8 +27,11 @@ export const COLORS = {
     white: "#FFFFFF",
 
     lightGray: "#FCFBFC",
-    gray: "#C1C3C5",
+    
     darkgray: "#C3C6C7",
+
+    gray: "#6A6A6A",
+  blue: "#0682FE",
 
     transparent: "transparent",
 };
