@@ -15,8 +15,8 @@ export default {
     promoBanner,
     focus,
     onboarding1,
-  onboarding2,
-  onboarding3,
+    onboarding2,
+    onboarding3,
     // Dummy
     usFlag
 }

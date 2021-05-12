@@ -146,7 +146,7 @@ const Tutorial = ({navigation}) => {
                         inputRange: [index - 1, index, index + 1],
                         outputRange: [0.3, 1, 0.3],
                         extrapolate: "clamp"
-                    });
+                    }); 
 
                     const dotSize = dotPosition.interpolate({
                         inputRange: [index - 1, index, index + 1],

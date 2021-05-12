@@ -23,8 +23,7 @@ export class SignIn extends Component {
         }
 
         this.onSignIn = this.onSignIn.bind(this)
-    }
-
+    } 
     onSignIn() {
         const { email, password } = this.state;
         firebase.auth().signInWithEmailAndPassword(email, password)
@@ -120,7 +119,6 @@ export class SignIn extends Component {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}
-                        onPress={() => this.props.navigation.navigate("QuestMain")}
                     >
                         <Text style={{ color: COLORS.white, ...FONTS.h3 }}>LogIn</Text>
                     </TouchableOpacity>
@@ -146,7 +144,23 @@ export class SignIn extends Component {
                         회원가입
                         </Text>
                     </TouchableOpacity>
-                    {renderButton()}
+                    <View style={{ margin: SIZES.padding * 3 }}>
+                    <TouchableOpacity
+                        style={{
+                            height: 60,
+                            backgroundColor: COLORS.orange,
+                            borderRadius: SIZES.radius / 1.5,
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                            
+                        }}
+                        onPress={() => this.props.navigation.navigate("AppMain")}
+                    >
+                        <Text style={{ color: COLORS.white, ...FONTS.h3 }}>LogIn</Text>
+                    </TouchableOpacity>
+                </View>
+                                            
+                    {/*{renderButton()}*/}
                 </ScrollView>
             </LinearGradient>
         </KeyboardAvoidingView>

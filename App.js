@@ -16,7 +16,7 @@
  import SignUp from "./front/landing/SignUp";
  import SignIn from "./front/landing/SignIn";
  import Tutorial from "./front/landing/Tutorial";
-
+ import AppStack from './navigation/AppStack';
 
  const theme = {
      ...DefaultTheme,
@@ -49,6 +49,7 @@
                 <Stack.Screen name="SignIn" component={SignIn} />   
                 <Stack.Screen name="SignUp" component={SignUp} />
                 <Stack.Screen name="Tutorial" component={Tutorial}/>
+                <Stack.Screen name="AppMain" component={AppStack} />
                 
              </Stack.Navigator>
          </NavigationContainer>
