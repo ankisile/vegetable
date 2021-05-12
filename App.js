@@ -13,9 +13,9 @@
  import { useFonts } from 'expo-font';
  
 
- import SignUp from "./landing/SignUp";
- import SignIn from "./landing/SignIn";
- import Tutorial from "./landing/Tutorial";
+ import SignUp from "./front/landing/SignUp";
+ import SignIn from "./front/landing/SignIn";
+ import Tutorial from "./front/landing/Tutorial";
 
 
  const theme = {
@@ -49,9 +49,7 @@
                 <Stack.Screen name="SignIn" component={SignIn} />   
                 <Stack.Screen name="SignUp" component={SignUp} />
                 <Stack.Screen name="Tutorial" component={Tutorial}/>
-                 {/* Tabs */}
- 
-                 {/* <Stack.Screen name="Scan" component={Scan} /> */}
+                
              </Stack.Navigator>
          </NavigationContainer>
      )

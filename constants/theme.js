@@ -21,15 +21,17 @@ export const COLORS = {
     yellow: "#FFC664",
     lightyellow: "#FFF9EC",
 
-    orange: "#ff781f",
+    orange: "#F1694E",
 
     black: "#1E1F20",
     white: "#FFFFFF",
 
     lightGray: "#FCFBFC",
-    gray: "#C1C3C5",
     darkgray: "#C3C6C7",
 
+    gray: "#6A6A6A",
+    blue: "#0682FE",
+    
     transparent: "transparent",
 };
 
