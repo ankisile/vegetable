@@ -44,27 +44,6 @@ const SignUp = ({navigation}) => {
         )   
     }
 
-/*    function renderLogo() {
-        return (
-            <View
-                style={{
-                    marginTop: SIZES.padding * 5,
-                    height: 100,
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}
-            >
-                <Image
-                    source={images.wallieLogo}
-                    resizeMode="contain"
-                    style={{
-                        width: "60%"
-                    }}
-                />
-            </View>
-        )
-    }
-*/
     function renderForm() {
         return (
             <View
@@ -184,7 +163,6 @@ const SignUp = ({navigation}) => {
             >
                 <ScrollView>
                     {renderHeader()}
-                    {/*{renderLogo()}*/}
                     {renderForm()}
                     {renderButton()}
                 </ScrollView>

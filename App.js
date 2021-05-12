@@ -1,9 +1,21 @@
-import React, { Component } from 'react';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
 
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
+ import React from 'react';
 
+ import { createStackNavigator } from "@react-navigation/stack";
+ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+ import { useFonts } from 'expo-font';
+ 
+
+ import SignUp from "./front/landing/SignUp";
+ import SignIn from "./front/landing/SignIn";
+ import Tutorial from "./front/landing/Tutorial";
 import TabScreen from './front/TabScreen';
 import MarketMain from './front/pointMarket/MarketMain';
 import DonateMain from './front/pointMarket/donation/DonateMain';
@@ -19,32 +31,39 @@ import MakequestDetail from './front/main/MakeQuestDetail';
 
 
 
-
-
-const theme = {
-    ...DefaultTheme,
-    colors: {
-        ...DefaultTheme.colors,
-        border: "transparent",
-    },
-};
-
-const Stack = createStackNavigator();
-
-export class App extends Component {
-
-    constructor(props) {
-        super()
-        this.state = {
-            loaded: false,
-        }
-    }
-
-    render() {
-        return (
-            <NavigationContainer theme={theme}>
-                <Stack.Navigator initialRouteName={'TabScreen'} >
-                    <Stack.Screen name="TabScreen" component={TabScreen} navigation={this.props.navigation} />
+ const theme = {
+     ...DefaultTheme,
+     colors: {
+         ...DefaultTheme.colors,
+         border: "transparent",
+     },
+ };
+ 
+ const Stack = createStackNavigator();
+ 
+ const App = () => {
+     const [loaded] = useFonts({
+         "Roboto-Black" : require('./assets/fonts/Roboto-Black.ttf'),
+         "Roboto-Bold" : require('./assets/fonts/Roboto-Bold.ttf'),
+         "Roboto-Regular" : require('./assets/fonts/Roboto-Regular.ttf'),
+     })
+     
+     if(!loaded){
+     return null;
+     }
+     return (
+         <NavigationContainer theme={theme}>
+             <Stack.Navigator
+                 screenOptions={{
+                     headerShown: false
+                 }}
+                 initialRouteName={'SignIn'}
+             >
+                <Stack.Screen name="SignIn" component={SignIn} />   
+                <Stack.Screen name="SignUp" component={SignUp} />
+                <Stack.Screen name="Tutorial" component={Tutorial}/>
+       //have to modify
+       <Stack.Screen name="TabScreen" component={TabScreen} navigation={this.props.navigation} />
                     <Stack.Screen name="MarketMain" component={MarketMain} navigation={this.props.navigation} />
                     <Stack.Screen name="CafeMain" component={CafeMain} navigation={this.props.navigation} />
                     <Stack.Screen name="DonateMain" component={DonateMain} navigation={this.props.navigation} />
@@ -56,17 +75,10 @@ export class App extends Component {
                     <Stack.Screen name="Makequest" component={Makequest}navigation={this.props.navigation} />
                     <Stack.Screen name="Meal" component={Meal}navigation={this.props.navigation} />
                     <Stack.Screen name="MakequestDetail" component={MakequestDetail}navigation={this.props.navigation} />
-                   
-
-
-
-                    {/* Tabs */}
-
-                    {/* <Stack.Screen name="Scan" component={Scan} /> */}
-                </Stack.Navigator>
-            </NavigationContainer>
-        )
-    }
-}
-
-export default App;
+                
+             </Stack.Navigator>
+         </NavigationContainer>
+     )
+ }
+ 
+ export default App;
