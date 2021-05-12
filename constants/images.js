@@ -5,6 +5,7 @@ const focus = require("../assets/images/focus.png");
 export const onboarding1 = require("../assets/images/onboarding-1.png");
 export const onboarding2 = require("../assets/images/onboarding-2.png");
 export const onboarding3 = require("../assets/images/onboarding-3.png");
+
 // Dummy
 const usFlag = require("../assets/images/us-flag.jpg");
 
@@ -15,8 +16,9 @@ export default {
     promoBanner,
     focus,
     onboarding1,
-  onboarding2,
-  onboarding3,
+    onboarding2,
+    onboarding3
+,
     // Dummy
     usFlag
 }

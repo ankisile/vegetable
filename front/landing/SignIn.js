@@ -12,7 +12,6 @@ import {
 import { LinearGradient } from 'expo-linear-gradient'
 import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
 
-
 export class SignIn extends Component {
     constructor(props) {
         super(props);
@@ -60,6 +59,29 @@ export class SignIn extends Component {
         }
     
         
+
+    
+        /*function renderLogo() {
+            return (
+                <View
+                    style={{
+                        marginTop: SIZES.padding * 5,
+                        height: 100,
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <Image
+                        source={images.wallieLogo}
+                        resizeMode="contain"
+                        style={{
+                            width: "60%"
+                        }}
+                    />
+                </View>
+            )
+        }
+        */
         function renderForm() {
             return (
                 <View
@@ -69,10 +91,12 @@ export class SignIn extends Component {
                     }}
                 >
         
-                    
+
+                    {/* Email */}
                     <View style={{ marginTop: SIZES.padding * 2 }}>
-                        <Text style={{ color: COLORS.Gray, ...FONTS.body3 }}>Email</Text>
+                        <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Email</Text>
     
+                            {/* Email */}
                             <TextInput
                                 style={{
                                     flex: 1,
@@ -83,13 +107,14 @@ export class SignIn extends Component {
                                     color: COLORS.black,
                                     ...FONTS.body3
                                 }}
-                                placeholderTextColor={COLORS.black}
+
                                 selectionColor={COLORS.black}
                             />
                     </View>
     
                     <View style={{ marginTop: SIZES.padding * 2 }}>
                         <Text style={{ color: COLORS.Gray, ...FONTS.body3 }}>Password</Text>
+
                         <TextInput
                             style={{
                                 marginVertical: SIZES.padding,
@@ -100,10 +125,11 @@ export class SignIn extends Component {
                                 ...FONTS.body3
                             }}
                             
-                            placeholderTextColor={COLORS.black}
+
                             selectionColor={COLORS.black}
                             secureTextEntry={true}
                         />
+                        
                     </View>
                 </View>
             )
@@ -116,6 +142,7 @@ export class SignIn extends Component {
                         style={{
                             height: 60,
                             backgroundColor: COLORS.orange,
+
                             borderRadius: SIZES.radius / 1.5,
                             alignItems: 'center',
                             justifyContent: 'center'
@@ -123,6 +150,7 @@ export class SignIn extends Component {
                         onPress={() => this.props.navigation.navigate("QuestMain")}
                     >
                         <Text style={{ color: COLORS.white, ...FONTS.h3 }}>LogIn</Text>
+
                     </TouchableOpacity>
                 </View>
             )
@@ -133,7 +161,8 @@ export class SignIn extends Component {
             style={{ flex: 1 }}
         >
             <LinearGradient
-                colors={[COLORS.lightGray, COLORS.lightGray]}
+
+                colors={[COLORS.white, COLORS.white]}
                 style={{ flex: 1 }}
             >
                 <ScrollView>
@@ -155,3 +184,4 @@ export class SignIn extends Component {
 }
 
 export default SignIn
+

@@ -10,6 +10,7 @@ export default function MyFeed({navigation}) {
             <Button
             onPress={() => navigation.navigate("Setting")}
             >나의 계정설정</Button>
+
         </View>
     )
 }
