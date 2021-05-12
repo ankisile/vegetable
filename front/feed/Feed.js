@@ -2,12 +2,10 @@ import React from 'react'
 import { StyleSheet, View, Text, Image, FlatList, Button } from 'react-native'
 
 
-export default function Camera() {
+export default function Feed() {
     return (
         <View>
-            <Text>
-                Camera
-            </Text>
+            <Text>Feed</Text>
         </View>
     )
 }
