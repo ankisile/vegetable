@@ -10,6 +10,7 @@ export default function MyFeed({navigation}) {
             <Text>
                 Have to make button
             </Text>
+
         </View>
     )
 }
