@@ -6,7 +6,7 @@ export default function MyFeed({navigation}) {
         <View>
             <Text>
                 profile
-            </Text>
+            </Text> 
             <Text>
                 Have to make button
             </Text>

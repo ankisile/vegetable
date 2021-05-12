@@ -4,7 +4,7 @@ import { Camera } from 'expo-camera';
 import * as ImagePicker from 'expo-image-picker';
  
 
-export default function Camera({ navigation }) {
+export default function Camera({ navigation }) { 
   const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
   const [camera, setCamera] = useState(null);
