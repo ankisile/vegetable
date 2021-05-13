@@ -24,7 +24,10 @@
     "react-native-paper": "^4.8.1",
     "react-native-screens": "~3.0.0",
     "react-native-vector-icons": "^8.1.0",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "expo-splash-screen": "~0.10.2",
+    "react-native-webview": "11.2.3",
+    "firebase": "8.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"

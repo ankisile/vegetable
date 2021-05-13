@@ -6,11 +6,12 @@
  * @flow strict-local
  */
 
- import React from 'react';
+ import React,{useEffect, useState} from 'react';
 
  import { createStackNavigator } from "@react-navigation/stack";
  import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
  import { useFonts } from 'expo-font';
+ 
  
 
  import SignUp from "./front/landing/SignUp";
@@ -34,11 +35,18 @@
          "Roboto-Bold" : require('./assets/fonts/Roboto-Bold.ttf'),
          "Roboto-Regular" : require('./assets/fonts/Roboto-Regular.ttf'),
      })
+    
      
+
+
      if(!loaded){
      return null;
      }
+     
+     
+     
      return (
+
          <NavigationContainer theme={theme}>
              <Stack.Navigator
                  screenOptions={{

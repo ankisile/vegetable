@@ -125,7 +125,7 @@ const Tutorial = ({navigation}) => {
                                 borderTopRightRadius: 0,
                                 backgroundColor: COLORS.blue
                             }}
-                            onPress={() => navigation.navigate("QuestMain")}
+                            onPress={() => navigation.navigate("AppMain")}
                         >
                             <Text style={{ ...FONTS.h1, color: COLORS.white }}>{completed ? "Let's Go" : "Skip"}</Text>
                         </TouchableOpacity>
