@@ -23,9 +23,11 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-paper": "^4.8.1",
     "react-native-screens": "~3.0.0",
-
     "react-native-vector-icons": "^8.1.0",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "firebase": "8.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
