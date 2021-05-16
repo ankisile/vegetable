@@ -3,6 +3,7 @@ import { Button,View,Text, } from 'react-native'
 
 
 function QuestMain({navigation}) {
+    
     return ( 
            <View>
             <Text>검색창 / +기호 등등  </Text>
