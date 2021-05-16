@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -13,6 +14,21 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 
 import firebase from 'firebase';
+=======
+import React, { Component } from 'react'
+
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import * as Font from 'expo-font';
+
+import firebase from 'firebase';
+import {Provider} from 'react-redux';
+import { createStore, applyMiddleware } from 'redux'
+import rootReducer from './redux/reducers'
+import thunk from 'redux-thunk'
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+>>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyDsY5CW6nrBkSGIr6yoqyZfUAc0LjCzNt4",
@@ -32,9 +48,16 @@ import SignUp from "./front/landing/SignUp";
 import SignIn from "./front/landing/SignIn";
 import Tutorial from "./front/landing/Tutorial";
 import AppStack from './navigation/AppStack';
+<<<<<<< HEAD
 import Makequest from './front/main/MakeQuest';
 import Meal from './front/main/Meal';
 import MakequestDetail from './front/main/MakeQuestDetail';
+=======
+import CameraScreen from './front/feed/PickCamera';
+
+import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+
+>>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
 
 const theme = {
     ...DefaultTheme,
@@ -46,6 +69,81 @@ const theme = {
 
 const Stack = createStackNavigator();
 
+<<<<<<< HEAD
+=======
+export class App extends Component {
+    constructor(props) {
+        super()
+        this.state = {
+          loaded: false,
+        }
+      }
+      async loadFonts() {
+        await Font.loadAsync({
+          "Roboto-Black" : require('./assets/fonts/Roboto-Black.ttf'),
+            "Roboto-Bold" : require('./assets/fonts/Roboto-Bold.ttf'),
+            "Roboto-Regular" : require('./assets/fonts/Roboto-Regular.ttf'),
+        });
+        this.setState({ loaded: true });
+      }
+      componentDidMount() {
+        this.loadFonts();
+        firebase.auth().onAuthStateChanged((user) => {
+          if (!user) {
+            this.setState({
+              loggedIn: false,
+            })
+          } else {
+            this.setState({
+              loggedIn: true,
+            })
+          }
+        })
+      }
+
+    render() {
+        const { loggedIn, loaded } = this.state;
+        if (!loaded) {
+            return null;
+        }
+        if (!loggedIn) {
+            return (
+              <NavigationContainer theme={theme}>
+                 <Stack.Navigator
+                        screenOptions={{
+                            headerShown: false
+                        }}
+                        initialRouteName={Tutorial}
+                    >
+                    <Stack.Screen name="SignIn" component={SignIn} />   
+                    <Stack.Screen name="SignUp" component={SignUp} />
+                    <Stack.Screen name="Tutorial" component={Tutorial}/>
+                    </Stack.Navigator>
+              </NavigationContainer>
+            );
+        }
+        return(
+            <Provider store={store}>
+            <NavigationContainer theme={theme}>
+                <Stack.Navigator screenOptions={{
+                    headerShown: false
+                }}
+                initialRouteName={'AppMain'}>
+                <Stack.Screen name="AppMain" component={AppStack} options={{headerShown:false}}/>
+                <Stack.Screen name="Camera" component={CameraScreen} navigation={this.props.navigation}/>
+                    
+                </Stack.Navigator>
+            </NavigationContainer>
+            </Provider>
+        )
+
+    }
+}
+
+export default App
+
+/*
+>>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
 const App = () => {
     const [loaded] = useFonts({
         "Roboto-Black": require('./assets/fonts/Roboto-Black.ttf'),
@@ -57,10 +155,46 @@ const App = () => {
         return null;
     }
     return (
+<<<<<<< HEAD
         <NavigationContainer>
             <AppStack />
+=======
+        <NavigationContainer theme={theme}>
+            <NavigationContainer theme={theme}>
+             <Stack.Navigator
+                 screenOptions={{
+                     headerShown: false
+                 }}
+                 initialRouteName={'SignIn'}
+             >
+                <Stack.Screen name="SignIn" component={SignIn} />   
+                <Stack.Screen name="SignUp" component={SignUp} />
+                <Stack.Screen name="Tutorial" component={Tutorial}/>
+                <Stack.Screen name="AppMain" component={AppStack} />
+       //have to modify
+    <Stack.Screen name="TabScreen" component={TabScreen} navigation={this.props.navigation} />
+                    <Stack.Screen name="MarketMain" component={MarketMain} navigation={this.props.navigation} />
+                    <Stack.Screen name="CafeMain" component={CafeMain} navigation={this.props.navigation} />
+                    <Stack.Screen name="DonateMain" component={DonateMain} navigation={this.props.navigation} />
+                    <Stack.Screen name="DonationResult" component={DonationResult} navigation={this.props.navigation} />
+                    <Stack.Screen name="PaybackMain" component={PaybackMain} navigation={this.props.navigation} />
+                    <Stack.Screen name="Payback" component={Payback} navigation={this.props.navigation} />
+                    <Stack.Screen name="Payment" component={Payment} navigation={this.props.navigation} />
+                    <Stack.Screen name="PayResult" component={PayResult} navigation={this.props.navigation} />
+                    <Stack.Screen name="Makequest" component={Makequest}navigation={this.props.navigation} />
+                    <Stack.Screen name="Meal" component={Meal}navigation={this.props.navigation} />
+                    <Stack.Screen name="MakequestDetail" component={MakequestDetail}navigation={this.props.navigation} />
+                
+             </Stack.Navigator>
+         </NavigationContainer>
+
+>>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
         </NavigationContainer>
     )
 }
 
 export default App;
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59

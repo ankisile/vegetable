@@ -3,8 +3,8 @@ import { Button,View,Text, } from 'react-native'
 
 
 function QuestMain({navigation}) {
-
-    return (
+    
+    return ( 
            <View>
             <Text>검색창 / +기호 등등  </Text>
             <Text>짱 멋있는 광고창 - 개발팀 화이팅!  </Text>

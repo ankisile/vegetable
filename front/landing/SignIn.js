@@ -1,4 +1,4 @@
-import React, {useState, Component } from "react";
+import React, {Component } from "react";
 import {
     View,
     Text,
@@ -11,6 +11,8 @@ import {
 } from "react-native"
 import { LinearGradient } from 'expo-linear-gradient'
 import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
+//import SocialButton from "../../constants/SocialButton"
+import firebase from 'firebase'
 
 export class SignIn extends Component {
     constructor(props) {
@@ -23,6 +25,7 @@ export class SignIn extends Component {
 
         this.onSignIn = this.onSignIn.bind(this)
     } 
+
     onSignIn() {
         const { email, password } = this.state;
         firebase.auth().signInWithEmailAndPassword(email, password)
@@ -36,31 +39,7 @@ export class SignIn extends Component {
 
     render() {
 
-        function renderHeader() {
-            return (
-                <TouchableOpacity
-                    style={{
-                        flexDirection: 'row',
-                        alignItems: "center",
-                        justifyContent:"center",
-                        marginTop: SIZES.padding * 6,
-                        paddingHorizontal: SIZES.padding * 2,
-                       
-                    }}
-                    onPress={() => console.log("Sign In")}
-                >
-                    <Text style={{ borderBottomWidth:3,
-                        borderColor:COLORS.orange, width:100, textAlign:'center',color: COLORS.black, ...FONTS.h4 }}>로그인</Text>
-                    
-                </TouchableOpacity>
-                
-            )
-        }
-    
-        
-
-    
-        /*function renderLogo() {
+        function renderLogo() {
             return (
                 <View
                     style={{
@@ -80,22 +59,21 @@ export class SignIn extends Component {
                 </View>
             )
         }
-        */
-        function renderForm() {
+    
+        
+        /*function renderForm() {
             return (
                 <View
                     style={{
                         marginTop: SIZES.padding * 3,
-                        marginHorizontal: SIZES.padding * 3,
+                        marginHorizontal: SIZES.padding * 4,
                     }}
                 >
         
-
-                    {/* Email */}
+                    
                     <View style={{ marginTop: SIZES.padding * 2 }}>
                         <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Email</Text>
     
-                            {/* Email */}
                             <TextInput
                                 style={{
                                     flex: 1,
@@ -106,14 +84,13 @@ export class SignIn extends Component {
                                     color: COLORS.black,
                                     ...FONTS.body3
                                 }}
-
                                 selectionColor={COLORS.black}
+                                onChangeText={(email) => this.setState({ email })}
                             />
                     </View>
     
                     <View style={{ marginTop: SIZES.padding * 2 }}>
-                        <Text style={{ color: COLORS.Gray, ...FONTS.body3 }}>Password</Text>
-
+                        <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Password</Text>
                         <TextInput
                             style={{
                                 marginVertical: SIZES.padding,
@@ -123,58 +100,108 @@ export class SignIn extends Component {
                                 color: COLORS.black,
                                 ...FONTS.body3
                             }}
-                            
-
                             selectionColor={COLORS.black}
                             secureTextEntry={true}
+                            onChangeText={(password) => this.setState({ password })}
                         />
-                        
                     </View>
                 </View>
             )
         }
     
-        function renderButton() {
-            return (
-                <View style={{ margin: SIZES.padding * 3 }}>
-                    <TouchableOpacity
-                        style={{
-                            height: 60,
-                            backgroundColor: COLORS.orange,
-
-                            borderRadius: SIZES.radius / 1.5,
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}
-                    >
-                        <Text style={{ color: COLORS.white, ...FONTS.h3 }}>LogIn</Text>
-
-                    </TouchableOpacity>
-                </View>
-            )
-        }
+        */
+       
         return (
             <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : null}
             style={{ flex: 1 }}
         >
-            <LinearGradient
-
-                colors={[COLORS.white, COLORS.white]}
+            <View
                 style={{ flex: 1 }}
             >
                 <ScrollView>
-                    {renderHeader()}
-                    {renderForm()}
-                    <TouchableOpacity                    
+                    {renderLogo()}
+                    {/*{renderForm()}*/}
+                    <View
+                    style={{
+                        marginTop: SIZES.padding * 3,
+                        marginHorizontal: SIZES.padding * 4,
+                    }}
+                >
+        
+                    
+                    <View style={{ marginTop: SIZES.padding * 2 }}>
+                        <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Email</Text>
+    
+                            <TextInput
+                                style={{
+                                    flex: 1,
+                                    marginVertical: SIZES.padding,
+                                    borderBottomColor: COLORS.black,
+                                    borderBottomWidth: 1,
+                                    height: 40,
+                                    color: COLORS.black,
+                                    ...FONTS.body3
+                                }}
+                                selectionColor={COLORS.black}
+                                onChangeText={(email) => this.setState({ email })}
+                            />
+                    </View>
+    
+                    <View style={{ marginTop: SIZES.padding * 2 }}>
+                        <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Password</Text>
+                        <TextInput
+                            style={{
+                                marginVertical: SIZES.padding,
+                                borderBottomColor: COLORS.black,
+                                borderBottomWidth: 1,
+                                height: 40,
+                                color: COLORS.black,
+                                ...FONTS.body3
+                            }}
+                            selectionColor={COLORS.black}
+                            secureTextEntry={true}
+                            onChangeText={(password) => this.setState({ password })}
+                        />
+                    </View>
+                </View>
+                    <View style={{ marginTop: SIZES.padding * 3,
+                                    marginHorizontal: SIZES.padding * 4,}}>
+                        <TouchableOpacity
+                        style={{
+                            height: 60,
+                            backgroundColor: COLORS.white,
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                            
+                        }}
                         onPress={() => this.props.navigation.navigate("SignUp")}
                     >
-                        <Text>
-                        회원가입
-                        </Text>
-                    </TouchableOpacity>
-                    <View style={{ margin: SIZES.padding * 3 }}>
-                    <TouchableOpacity
+                        <Text style={{ color: COLORS.black, borderColor: COLORS.orange, ...FONTS.h3 }}>회원가입</Text>
+                        </TouchableOpacity>
+                    </View>                 
+                    
+{/*}                     <View>
+                    <SocialButton
+                        buttonTitle="Sign In with Facebook"
+                        btnType="facebook"
+                        color="#4867aa"
+                        borderColor={COLORS.orange}
+                        //onPress={() => fbLogin()}
+                    />
+
+                    <SocialButton
+                        buttonTitle="Sign In with Google"
+                        btnType="google"
+                        color="#de4d41"
+                        borderColor={COLORS.black}
+
+                        //onPress={() => googleLogin()}
+                    />
+                    </View> */}
+                    <View style={{ marginTop: SIZES.padding * 3,
+                                    marginHorizontal: SIZES.padding * 4,}}>
+                        <TouchableOpacity
                         style={{
                             height: 60,
                             backgroundColor: COLORS.orange,
@@ -183,19 +210,16 @@ export class SignIn extends Component {
                             justifyContent: 'center'
                             
                         }}
-                        onPress={() => this.props.navigation.navigate("AppMain")}
+                        onPress={() => this.onSignIn()}
                     >
                         <Text style={{ color: COLORS.white, ...FONTS.h3 }}>LogIn</Text>
-                    </TouchableOpacity>
-                </View>
-                                            
-                    {/*{renderButton()}*/}
+                        </TouchableOpacity>
+                    </View>                        
                 </ScrollView>
-            </LinearGradient>
+            </View>
         </KeyboardAvoidingView>
         )
     }
 }
 
 export default SignIn
-
