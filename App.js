@@ -36,8 +36,6 @@ import Makequest from './front/main/MakeQuest';
 import Meal from './front/main/Meal';
 import MakequestDetail from './front/main/MakeQuestDetail';
 
-
-
 const theme = {
     ...DefaultTheme,
     colors: {

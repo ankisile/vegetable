@@ -7,6 +7,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
+import { connect } from 'react-redux'
+
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -38,7 +40,7 @@ import Setting from '../front/myPage/Setting';
 const HomeStack = ({ navigation }) => (
     <Stack.Navigator>
         <Stack.Screen name="QuestMain" component={QuestMain} navigation={navigation} />
-        <Stack.Screen name="MarketMain" component={MarketMain} navigation={navigation} />
+        <Stack.Screen name="MakeQuest" component={MakeQuest} navigation={navigation} />
         <Stack.Screen name="MakeQuestDetail" component={MakeQuestDetail} navigation={navigation} />
         <Stack.Screen name="Meal" component={Meal} navigation={navigation} />
     </Stack.Navigator>
@@ -59,7 +61,7 @@ const FeedStack = ({ navigation }) => (
 
 const MarketStack = ({ navigation }) => (
     <Stack.Navigator>
-        <Stack.Screen name="MarketMain" component={MarketMain} navigation={navigation} />
+        <Stack.Screen name="MarketMain" component={MarketMain} navigation={MarketStack.navigation} />
         <Stack.Screen name="CafeMain" component={CafeMain} navigation={navigation} />
         <Stack.Screen name="DonateMain" component={DonateMain} navigation={navigation} />
         <Stack.Screen name="DonationResult" component={DonationResult} navigation={navigation} />
@@ -79,7 +81,7 @@ const MyPageStack = ({ navigation }) => (
 
 const AppStack = ({ navigation }) => {
     return (
-        <Tab.Navigator initialRouteName="Market" labeled={false}>
+        <Tab.Navigator labeled={false}>
             <Tab.Screen name="Home" component={HomeStack}       //Home == Quest
                 options={{
                     tabBarIcon: ({ color, size }) => (
