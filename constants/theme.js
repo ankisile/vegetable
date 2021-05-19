@@ -35,6 +35,8 @@ export const COLORS = {
     
     blue: "#0682FE",
     
+    quest:"#769E7B",
+
 
     transparent: "transparent",
 };
