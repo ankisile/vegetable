@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button,View,Text, TextInput, } from 'react-native'
 
-
 function sample() {
     return (
         

@@ -19,7 +19,7 @@ function QuestMain({navigation}) {
             <Button title = "생활 습관"/>
             <Button title = "에픽 쿠에스트"/>
             <Button title = "퀘스트 개설"
-             onPress={() => navigation.navigate("Makequest") }/>
+             onPress={() => navigation.navigate("MakeQuest") }/>
             </View>
            
            {/* onPress = {() =>navigation.navigate("thisisreturn") } */}

@@ -35,10 +35,13 @@ import MyFeed from '../front/myPage/MyFeed';
 import Setting from '../front/myPage/Setting';
 
 
+
+
 const HomeStack = ({ navigation }) => (
     <Stack.Navigator>
         <Stack.Screen name="QuestMain" component={QuestMain} navigation={navigation} />
-        <Stack.Screen name="MarketMain" component={MarketMain} navigation={navigation} />
+        {/* <Stack.Screen name="MarketMain" component={MarketMain} navigation={navigation} /> */}
+        <Stack.Screen name="MakeQuest" component={MakeQuest} navigation={navigation} />
         <Stack.Screen name="MakeQuestDetail" component={MakeQuestDetail} navigation={navigation} />
         <Stack.Screen name="Meal" component={Meal} navigation={navigation} />
     </Stack.Navigator>
@@ -67,6 +70,9 @@ const MarketStack = ({ navigation }) => (
         <Stack.Screen name="Payback" component={Payback} navigation={navigation} />
         <Stack.Screen name="Payment" component={Payment} navigation={navigation} />
         <Stack.Screen name="PayResult" component={PayResult} navigation={navigation} />
+
+
+
     </Stack.Navigator>
 );
 
@@ -79,7 +85,22 @@ const MyPageStack = ({ navigation }) => (
 
 const AppStack = ({ navigation }) => {
     return (
-        <Tab.Navigator initialRouteName="Market" labeled={false}>
+
+
+        <Tab.Navigator >
+
+            <Tab.Screen name="Market" component={MarketStack}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                    ),
+                }} />
+            <Tab.Screen name="MyPage" component={MyPageStack}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                    ),
+                }} />
             <Tab.Screen name="Home" component={HomeStack}       //Home == Quest
                 options={{
                     tabBarIcon: ({ color, size }) => (
@@ -93,23 +114,13 @@ const AppStack = ({ navigation }) => {
                     ),
                 }} />
             {/* <Tab.Screen name="Camera" component={CameraStack}
-                options={{
+                options={{  
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="home" color={color} size={26} />
                     ),
                 }} /> */}
-            <Tab.Screen name="Market" component={MarketStack}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                    ),
-                }} />
-            <Tab.Screen name="MyPage" component={MyPageStack}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                    ),
-                }} />
+
+
         </Tab.Navigator>
     )
 }

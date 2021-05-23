@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button,View,Text, } from 'react-native'
 
-function sample() {
+function Meal() {
     return (
         
         <View>
@@ -13,4 +13,4 @@ function sample() {
     )
 }
 
-export default sample
+export default Meal

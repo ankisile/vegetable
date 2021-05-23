@@ -37,6 +37,10 @@ import Meal from './front/main/Meal';
 import MakequestDetail from './front/main/MakeQuestDetail';
 
 
+// firebaseInit.js
+
+const db = firebase.firestore(db)
+
 
 const theme = {
     ...DefaultTheme,
@@ -47,6 +51,7 @@ const theme = {
 };
 
 const Stack = createStackNavigator();
+
 
 const App = () => {
     const [loaded] = useFonts({
