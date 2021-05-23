@@ -4,22 +4,13 @@
 // import * as ImagePicker from 'expo-image-picker';
  
 
-<<<<<<< HEAD:front/feed/Camera.js
-// export default function Camera({ navigation }) {
-//   const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
-//   const [hasCameraPermission, setHasCameraPermission] = useState(null);
-//   const [camera, setCamera] = useState(null);
-//   const [image, setImage] = useState(null);
-//   const [type, setType] = useState(Camera.Constants.Type.back);
-=======
 export default function PickCamera({ navigation }) { 
   const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
   const [camera, setCamera] = useState(null);
   const [image, setImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59:front/feed/PickCamera.js
-
+}
 //   useEffect(() => {
 //     (async () => {
 //       const cameraStatus = await Camera.requestPermissionsAsync();

@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
-
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-
-import firebase from 'firebase';
-=======
 import React, { Component } from 'react'
 
 import { createStackNavigator } from "@react-navigation/stack";
@@ -28,7 +11,6 @@ import rootReducer from './redux/reducers'
 import thunk from 'redux-thunk'
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyDsY5CW6nrBkSGIr6yoqyZfUAc0LjCzNt4",
@@ -47,17 +29,11 @@ if(firebase.apps.length === 0){
 import SignUp from "./front/landing/SignUp";
 import SignIn from "./front/landing/SignIn";
 import Tutorial from "./front/landing/Tutorial";
-import AppStack from './navigation/AppStack';
-<<<<<<< HEAD
-import Makequest from './front/main/MakeQuest';
-import Meal from './front/main/Meal';
-import MakequestDetail from './front/main/MakeQuestDetail';
-=======
+import AppStack from './navigation/Appstack';
 import CameraScreen from './front/feed/PickCamera';
 
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
 
 const theme = {
     ...DefaultTheme,
@@ -69,8 +45,6 @@ const theme = {
 
 const Stack = createStackNavigator();
 
-<<<<<<< HEAD
-=======
 export class App extends Component {
     constructor(props) {
         super()
@@ -143,7 +117,6 @@ export class App extends Component {
 export default App
 
 /*
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
 const App = () => {
     const [loaded] = useFonts({
         "Roboto-Black": require('./assets/fonts/Roboto-Black.ttf'),
@@ -155,10 +128,6 @@ const App = () => {
         return null;
     }
     return (
-<<<<<<< HEAD
-        <NavigationContainer>
-            <AppStack />
-=======
         <NavigationContainer theme={theme}>
             <NavigationContainer theme={theme}>
              <Stack.Navigator
@@ -188,13 +157,9 @@ const App = () => {
              </Stack.Navigator>
          </NavigationContainer>
 
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
         </NavigationContainer>
     )
 }
 
 export default App;
-<<<<<<< HEAD
-=======
 */
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59

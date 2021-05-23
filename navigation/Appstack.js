@@ -7,14 +7,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-<<<<<<< HEAD
-import { connect } from 'react-redux'
-=======
 import firebase from 'firebase'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchUser } from '../redux/actions/index'
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
+
+import { storeUser, getUser, fetchUserFollowing, fetchPoint } from '../backend/User'
+
+import  { search } from '../backend/Search'
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -28,11 +28,7 @@ import MakeQuestDetail from '../front/main/MakeQuestDetail';
 import Meal from '../front/main/Meal';
 import QuestMain from '../front/main/QuestMain';
 
-<<<<<<< HEAD
-import Camera from '../front/feed/Camera';
-=======
 import PickCamera from '../front/feed/PickCamera';
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
 import Feed from '../front/feed/Feed';
 
 import MarketMain from '../front/pointMarket/MarketMain';
@@ -49,32 +45,21 @@ import Setting from '../front/myPage/Setting';
 
 
 const HomeStack = ({ navigation }) => (
-<<<<<<< HEAD
-    <Stack.Navigator>
-        <Stack.Screen name="QuestMain" component={QuestMain} navigation={navigation} />
-        <Stack.Screen name="MakeQuest" component={MakeQuest} navigation={navigation} />
-        <Stack.Screen name="MakeQuestDetail" component={MakeQuestDetail} navigation={navigation} />
-        <Stack.Screen name="Meal" component={Meal} navigation={navigation} />
-=======
     <Stack.Navigator screenOptions={{
-        headerShown: false}}>
-        <Stack.Screen name="QuestMain" component={QuestMain}/>
-        <Stack.Screen name="MakeQuest" component={MakeQuest}  />
+        headerShown: false
+    }}>
+        <Stack.Screen name="QuestMain" component={QuestMain} />
+        <Stack.Screen name="MakeQuest" component={MakeQuest} />
         <Stack.Screen name="MakeQuestDetail" component={MakeQuestDetail} />
-        <Stack.Screen name="Meal" component={Meal}  />
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
+        <Stack.Screen name="Meal" component={Meal} />
     </Stack.Navigator>
 );
 
 const FeedStack = ({ navigation }) => (
-<<<<<<< HEAD
-    <Stack.Navigator>
-        <Stack.Screen name="Feed" component={Feed} navigation={navigation} />
-=======
     <Stack.Navigator screenOptions={{
-        headerShown: false}}>
-        <Stack.Screen name="Feed" component={Feed}/>
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
+        headerShown: false
+    }}>
+        <Stack.Screen name="Feed" component={Feed} />
     </Stack.Navigator>
 );
 
@@ -86,60 +71,47 @@ const FeedStack = ({ navigation }) => (
 // );
 
 const MarketStack = ({ navigation }) => (
-<<<<<<< HEAD
-    <Stack.Navigator>
-        <Stack.Screen name="MarketMain" component={MarketMain} navigation={MarketStack.navigation} />
-        <Stack.Screen name="CafeMain" component={CafeMain} navigation={navigation} />
-        <Stack.Screen name="DonateMain" component={DonateMain} navigation={navigation} />
-        <Stack.Screen name="DonationResult" component={DonationResult} navigation={navigation} />
-        <Stack.Screen name="PaybackMain" component={PaybackMain} navigation={navigation} />
-        <Stack.Screen name="Payback" component={Payback} navigation={navigation} />
-        <Stack.Screen name="Payment" component={Payment} navigation={navigation} />
-        <Stack.Screen name="PayResult" component={PayResult} navigation={navigation} />
-=======
     <Stack.Navigator screenOptions={{
-        headerShown: false}}>
-        <Stack.Screen name="MarketMain" component={MarketMain}  />
-        <Stack.Screen name="CafeMain" component={CafeMain}  />
+        headerShown: false
+    }}>
+        <Stack.Screen name="MarketMain" component={MarketMain} />
+        <Stack.Screen name="CafeMain" component={CafeMain} />
         <Stack.Screen name="DonateMain" component={DonateMain} />
         <Stack.Screen name="DonationResult" component={DonationResult} />
         <Stack.Screen name="PaybackMain" component={PaybackMain} />
-        <Stack.Screen name="Payback" component={Payback}  />
+        <Stack.Screen name="Payback" component={Payback} />
         <Stack.Screen name="Payment" component={Payment} />
-        <Stack.Screen name="PayResult" component={PayResult}  />
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
+        <Stack.Screen name="PayResult" component={PayResult} />
     </Stack.Navigator>
 );
 
 const MyPageStack = ({ navigation }) => (
-<<<<<<< HEAD
-    <Stack.Navigator>
-        <Stack.Screen name="MyFeed" component={MyFeed} navigation={navigation} />
-        <Stack.Screen name="Setting" component={Setting} navigation={navigation} />
-    </Stack.Navigator>
-);
-
-const AppStack = ({ navigation }) => {
-    return (
-        <Tab.Navigator labeled={false}>
-=======
     <Stack.Navigator screenOptions={{
-        headerShown: false}}>
-        <Stack.Screen name="MyFeed" component={MyFeed}  />
+        headerShown: false
+    }}>
+        <Stack.Screen name="MyFeed" component={MyFeed} />
         <Stack.Screen name="Setting" component={Setting} />
     </Stack.Navigator>
 );
 
 const AppStack = (props, { navigation }) => {
     useEffect(() => {
-       //props.clearData();
-       props.fetchUser();
-       //props.fetchUserPosts();
-       //props.fetchUserFollowing();
-      }, [])
+        //props.clearData();
+        //props.fetchUser();
+        //props.fetchUserPosts();
+        //props.fetchUserFollowing();
+
+        
+
+        storeUser();
+        getUser();
+        fetchPoint();
+        fetchUserFollowing();
+    }, [])
+
+
     return (
         <Tab.Navigator initialRouteName="Home" labeled={false}>
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
             <Tab.Screen name="Home" component={HomeStack}       //Home == Quest
                 options={{
                     tabBarIcon: ({ color, size }) => (
@@ -152,27 +124,18 @@ const AppStack = (props, { navigation }) => {
                         <MaterialCommunityIcons name="home" color={color} size={26} />
                     ),
                 }} />
-<<<<<<< HEAD
-            {/* <Tab.Screen name="Camera" component={CameraStack}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                    ),
-                }} /> */}
-=======
             <Tab.Screen name="PickCamera" component={EmptyScreen}
                 listeners={({ navigation }) => ({
-                        tabPress: event => {
-                            event.preventDefault();
-                            navigation.navigate("PickCamera")
-                        }
-                    })}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="plus-box" color={color} size={26} />
-                        ),
-            }} />
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
+                    tabPress: event => {
+                        event.preventDefault();
+                        navigation.navigate("PickCamera")
+                    }
+                })}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="plus-box" color={color} size={26} />
+                    ),
+                }} />
             <Tab.Screen name="Market" component={MarketStack}
                 options={{
                     tabBarIcon: ({ color, size }) => (
@@ -180,29 +143,21 @@ const AppStack = (props, { navigation }) => {
                     ),
                 }} />
             <Tab.Screen name="MyPage" component={MyPageStack}
-<<<<<<< HEAD
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-=======
-             listeners={({ navigation }) => ({
-                tabPress: event => {
-                    event.preventDefault();
-                    navigation.navigate("MyFeed")
-                }})}
+                listeners={({ navigation }) => ({
+                    tabPress: event => {
+                        event.preventDefault();
+                        navigation.navigate("MyFeed")
+                    }
+                })}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="account-circle" color={color} size={26} />
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
                     ),
                 }} />
         </Tab.Navigator>
     )
 }
 
-<<<<<<< HEAD
-export default AppStack;
-=======
 
 const mapStateToProps = (store) => ({
     currentUser: store.userState.currentUser
@@ -210,4 +165,3 @@ const mapStateToProps = (store) => ({
 const mapDispatchProps = (dispatch) => bindActionCreators({ fetchUser }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchProps)(AppStack);
->>>>>>> bd37fad47b30de489c7762c7d4a6d4eefbc61b59
