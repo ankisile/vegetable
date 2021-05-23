@@ -23,7 +23,6 @@ const EmptyScreen = () => {
     return (null)
 }
 
-import MakeQuest from '../front/main/MakeQuest';
 import MakeQuestDetail from '../front/main/MakeQuestDetail';
 import Meal from '../front/main/Meal';
 import QuestMain from '../front/main/QuestMain';
@@ -46,12 +45,19 @@ import Setting from '../front/myPage/Setting';
 
 const HomeStack = ({ navigation }) => (
     <Stack.Navigator screenOptions={{
+<<<<<<< HEAD
         headerShown: false
     }}>
         <Stack.Screen name="QuestMain" component={QuestMain} />
         <Stack.Screen name="MakeQuest" component={MakeQuest} />
         <Stack.Screen name="MakeQuestDetail" component={MakeQuestDetail} />
         <Stack.Screen name="Meal" component={Meal} />
+=======
+        headerShown: false}}>
+        <Stack.Screen name="QuestMain" component={QuestMain}  />
+        <Stack.Screen name="Meal" component={Meal}  />
+        <Stack.Screen name="MakeQuestDetail" component={MakeQuestDetail} />
+>>>>>>> 35bb0955c32c76c7c9916ddb20005826543da8dc
     </Stack.Navigator>
 );
 
