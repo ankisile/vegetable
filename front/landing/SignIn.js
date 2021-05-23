@@ -43,17 +43,25 @@ export class SignIn extends Component {
             return (
                 <View
                     style={{
-                        marginTop: SIZES.padding * 5,
+                        marginTop: SIZES.padding * 10,
                         height: 100,
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}
                 >
                     <Image
-                        source={images.wallieLogo}
+                        source={images.logo}
                         resizeMode="contain"
                         style={{
-                            width: "60%"
+                            width: 180, height:180
+                        }}
+                    />
+                    <Image
+                        source={images.qveco}
+                        resizeMode="contain"
+                        style={{
+                            width: 125,
+                            height:40
                         }}
                     />
                 </View>
@@ -124,22 +132,22 @@ export class SignIn extends Component {
                     {/*{renderForm()}*/}
                     <View
                     style={{
-                        marginTop: SIZES.padding * 3,
-                        marginHorizontal: SIZES.padding * 4,
+                        marginVertical:50,
+                        marginHorizontal: SIZES.padding * 8,
                     }}
                 >
         
                     
-                    <View style={{ marginTop: SIZES.padding * 2 }}>
+                    <View style={{ marginTop: SIZES.padding*2  }}>
                         <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Email</Text>
     
                             <TextInput
                                 style={{
                                     flex: 1,
-                                    marginVertical: SIZES.padding,
+                                    //marginVertical: SIZES.padding,
                                     borderBottomColor: COLORS.black,
                                     borderBottomWidth: 1,
-                                    height: 40,
+                                    height: 30,
                                     color: COLORS.black,
                                     ...FONTS.body3
                                 }}
@@ -148,14 +156,14 @@ export class SignIn extends Component {
                             />
                     </View>
     
-                    <View style={{ marginTop: SIZES.padding * 2 }}>
+                    <View style={{ marginTop: SIZES.padding*2  }}>
                         <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Password</Text>
                         <TextInput
                             style={{
-                                marginVertical: SIZES.padding,
+                                //marginVertical: SIZES.padding,
                                 borderBottomColor: COLORS.black,
                                 borderBottomWidth: 1,
-                                height: 40,
+                                height: 30,
                                 color: COLORS.black,
                                 ...FONTS.body3
                             }}
@@ -166,18 +174,22 @@ export class SignIn extends Component {
                     </View>
                 </View>
                     <View style={{ marginTop: SIZES.padding * 3,
-                                    marginHorizontal: SIZES.padding * 4,}}>
+                                    marginHorizontal: SIZES.padding * 8,}}>
                         <TouchableOpacity
                         style={{
-                            height: 60,
+                            height: 40,
                             backgroundColor: COLORS.white,
                             alignItems: 'center',
+                            borderLeftColor: 'black',
+                            borderRightColor: 'black',
+                            borderTopColor: 'black',
+                            borderBottomColor: 'black', 
                             justifyContent: 'center'
                             
                         }}
                         onPress={() => this.props.navigation.navigate("SignUp")}
                     >
-                        <Text style={{ color: COLORS.black, borderColor: COLORS.orange, ...FONTS.h3 }}>회원가입</Text>
+                        <Text style={{ color: COLORS.black,  fontWeight:"bold" ,fontSize:10}}>앱 회원가입 하기</Text>
                         </TouchableOpacity>
                     </View>                 
                     
@@ -200,10 +212,10 @@ export class SignIn extends Component {
                     />
                     </View> */}
                     <View style={{ marginTop: SIZES.padding * 3,
-                                    marginHorizontal: SIZES.padding * 4,}}>
+                                    marginHorizontal: SIZES.padding * 8,}}>
                         <TouchableOpacity
                         style={{
-                            height: 60,
+                            height: 50, 
                             backgroundColor: COLORS.orange,
                             borderRadius: SIZES.radius / 1.5,
                             alignItems: 'center',
@@ -212,7 +224,7 @@ export class SignIn extends Component {
                         }}
                         onPress={() => this.onSignIn()}
                     >
-                        <Text style={{ color: COLORS.white, ...FONTS.h3 }}>LogIn</Text>
+                        <Text style={{ color: COLORS.white, ...FONTS.h4 }}>LogIn</Text>
                         </TouchableOpacity>
                     </View>                        
                 </ScrollView>

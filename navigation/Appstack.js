@@ -42,8 +42,8 @@ import Setting from '../front/myPage/Setting';
 const HomeStack = ({ navigation }) => (
     <Stack.Navigator screenOptions={{
         headerShown: false}}>
+        <Stack.Screen name="QuestMain" component={QuestMain}  />
         <Stack.Screen name="Meal" component={Meal}  />
-        <Stack.Screen name="QuestMain" component={QuestMain}/>
         <Stack.Screen name="MakeQuestDetail" component={MakeQuestDetail} />
     </Stack.Navigator>
 );

@@ -4,6 +4,7 @@ const bill = require("../assets/icons/bill.png");
 const close = require("../assets/icons/close.png");
 const disable_eye = require("../assets/icons/disable_eye.png");
 const down = require("../assets/icons/down.png");
+const up = require("../assets/icons/up.png");
 const eye = require("../assets/icons/eye.png")
 const game = require("../assets/icons/games.png");
 const barcode = require("../assets/icons/barcode.png");
@@ -16,6 +17,7 @@ const scan = require("../assets/icons/scan.png");
 const send = require("../assets/icons/send.png");
 const user = require("../assets/icons/user.png");
 const wallet = require("../assets/icons/wallet.png");
+const heart = require("../assets/icons/heart.png");
 
 export default {
     back,
@@ -24,6 +26,7 @@ export default {
     close,
     disable_eye,
     down,
+    up,
     eye,
     game,
     barcode,
@@ -35,5 +38,6 @@ export default {
     scan,
     send,
     user,
-    wallet
+    wallet,
+    heart
 }

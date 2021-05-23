@@ -4,10 +4,14 @@ import {
     View,
     Text,
     Image,
+    TouchableOpacity,
+    ScrollView,
+    ImageBackground,
 } from 'react-native';
 
 import { icons, images, COLORS, SIZES, FONTS } from '../../constants';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import ActionButton from 'react-native-action-button';
+
 
 const RequirementDetail = ({ label, days }) => {
     return (
@@ -19,22 +23,34 @@ const RequirementDetail = ({ label, days }) => {
                     borderColor: COLORS.white,
                     borderRadius: SIZES.radius / 1.5,
                     alignItems: 'center',
-                    justifyContent: 'center'  
-                }}
+                    justifyContent: 'center',
+                    shadowColor: '#000000',
+                    shadowOpacity: 0.27,
+                    shadowRadius: 4.65,
+                    shadowOffset: {
+                    width: 0,
+                    height: 3,
+                    },
+                    elevation: 3,
+                    
+                } }
             >
-                <View style={{marginTop:SIZES.padding*1.5}}>
-                    <Text style={{ marginLeft: SIZES.padding*23, color: COLORS.lightGray, ...FONTS.body4 }}>{days}일 동안 수행</Text>
-                    <Text style={{ marginTop: SIZES.padding, color: COLORS.black, ...FONTS.h2, alignItems: 'center',
-                        justifyContent: 'center' }}>{label}</Text>
+                <View style={{ flex: 1, alignItems: 'flex-end' }}>
+                    <Text style={{marginTop: 10, marginLeft: SIZES.padding*23, color: COLORS.gray, fontSize:8, }}>{days}일 동안 수행</Text>
                 </View>
+                <View style={{ flex: 1, marginTop:-20, }}>
+                    <Text style={{ paddingHorizontal:5, color: COLORS.black, ...FONTS.body3 }}>{label}</Text>
+                </View>
+                
                 <TouchableOpacity
                     style={{
-                            marginHorizontal:SIZES.padding*11,
+                            width:120,
                             height: 20,
                             backgroundColor: COLORS.orange,
                             borderRadius: SIZES.radius / 1.5,
                             alignItems: 'center',
-                            justifyContent: 'center'
+                            justifyContent: 'center',
+                            marginBottom : SIZES.padding*1,
                         }}
                         onPress={() => console.log('hi')}
                     >
@@ -77,12 +93,33 @@ const PlantDetail = ({ navigation }) => {
                     </View>
                 </View>
 
-                <View style={{ flexDirection: 'row', marginTop: "10%" }}>
-                    <View style={{ flex: 1 , alignItems: "center",
-                        justifyContent:"center",}}>
-                        <Text style={{ color: COLORS.white, ...FONTS.largeTitle }}>식사 퀘스트</Text>
+                <View style={{position: 'absolute',
+                    top: 50,
+                    left: SIZES.padding*4,
+                    right: SIZES.padding}}>
+                    <View style={{ flex: 1 , alignItems: "flex-start", justifyContent:"center",}}>
+                        <Text style={{ color:'black', ...FONTS.body2 }}>식사 퀘스트</Text>
                     </View>
-                    <View style={{ flex: 1 }}></View>
+                </View>
+                <View style={{position: 'absolute',
+                    
+                    left: 170,
+                    right: SIZES.padding}}>
+                    <ImageBackground
+                        source={images.oframe}
+                        style={{width: 210,
+                            height: 220}}
+                    >
+                    <Image
+                        source={images.onionb}
+                        resizeMode="contain"
+                        style={{
+                            width: 210,
+                            height: 220
+                        }}
+                    />
+                    </ImageBackground>
+                    
                 </View>
             </View>
         )
@@ -91,8 +128,8 @@ const PlantDetail = ({ navigation }) => {
 
     function renderQuests() {
         return (
-            <ScrollView>
-            <View style={{ flex: 2.5, marginTop: SIZES.padding, paddingHorizontal: SIZES.padding*5, justifyContent: 'space-around' }}>
+            <ScrollView style={{height:570}}>
+            <View style={{ flex: 2.5, paddingHorizontal: SIZES.padding*5, justifyContent: 'space-around' }}>
                 <RequirementDetail
                     label="Sunlight"
                     days="5"
@@ -102,7 +139,7 @@ const PlantDetail = ({ navigation }) => {
                     days="5"
                                     />
                 <RequirementDetail
-                    label="Room Temp"
+                    label="dd"
                     days="5"                />
                 <RequirementDetail
                     label="Soil"
@@ -119,29 +156,42 @@ const PlantDetail = ({ navigation }) => {
     return (
         <View style={styles.container}>
             {/* Banner Photo */}
-            <View style={{ height: "35%", backgroundColor: COLORS.quest}}>
+            <View style={{ height: "40%", backgroundColor: 'white'}}>
             </View>
 
             {/* Requirements */}
-            <View
-                style={{
+            <View style={{
                     flex: 1,
-                    marginTop: -40,
+                    marginTop: -50,
                     borderTopLeftRadius: 40,
                     borderTopRightRadius: 40,
-                    paddingVertical: SIZES.padding
+                    paddingVertical: SIZES.padding,
+                    backgroundColor:COLORS.white,
+                    shadowColor: '#000000',
+                    shadowOpacity: 0.27,
+                    shadowRadius: 4.65,
+                    shadowOffset: {
+                    width: 0,
+                    height: 3,
+                    },
+                    elevation: 3,
                 }}
             >
 
-                <Text style={{ paddingHorizontal: SIZES.padding, color: COLORS.black, ...FONTS.body4 }}>퀘스트 선택</Text>
+                <Text style={{ paddingHorizontal: SIZES.padding*4, color: COLORS.black, ...FONTS.h5,paddingTop:10 }}>퀘스트 선택</Text>
 
-
-                {renderQuests()}
+                <View style={{marginTop:20}}>{renderQuests()}</View>
+                
 
             </View>
 
             {renderHeader()}
+            <ActionButton
+                buttonColor="rgba(231,76,60,1)"
+                onPress={() => { navigation.navigate("MakeQuestDetail")}}
+                />
         </View>
+       
     )
 
 }
@@ -149,6 +199,16 @@ const PlantDetail = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1
+    },
+    boxShadow: {
+        shadowColor: '#000000',
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+        shadowOffset: {
+        width: 0,
+        height: 3,
+        },
+        elevation: 3,
     }
 })
 
