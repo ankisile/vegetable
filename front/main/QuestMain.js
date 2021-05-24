@@ -32,28 +32,6 @@ const QuestMain = ({ navigation }) => {
   useEffect(() => {
 
     firebase.firestore()
-      .collection("quests")
-      .doc(item['qid'])
-      .get()
-      .then((snapshot) => {
-        // console.log("snapshot")
-        // console.log(snapshot.data())
-        let tmp = dataState
-
-        tmp.push(snapshot.data())
-        setData(tmp)
-        console.log("data inner")
-        console.log(dataState)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-
-  }, [])
-
-  const settingData = async () => {
-
-    await firebase.firestore()
       .collection("users")
       .doc(firebase.auth().currentUser.uid)
       .collection("userQuests")
@@ -71,27 +49,58 @@ const QuestMain = ({ navigation }) => {
         console.log(err)
       })
 
-    //console.log(quests)
+    quests.forEach((item) => {
+      if (item.complete === false) {
+        //console.log(item['qid'])
+        firebase.firestore()
+          .collection("quests")
+          .doc(item['qid'])
+          .get()
+          .then((snapshot) => {
+            // console.log("snapshot")
+            // console.log(snapshot.data())
+            let tmp = dataState
 
-    if (data.length > 0) {
-      return
-    }
+            tmp.push(snapshot.data())
+            setData(tmp)
+            console.log("data inner")
+            console.log(dataState)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
 
-    data = async () => {
-      await quests.forEach((item) => {
-        if (item.complete === false) {
-          //console.log(item['qid'])
-
-
-        }
-      })
-      return dataState
-    }
+      }
+    })
 
 
-    console.log("data = state")
-    console.log(dataState)
-  }
+  }, [])
+
+  // const settingData = async () => {
+
+  //   await 
+
+  //   //console.log(quests)
+
+  //   if (data.length > 0) {
+  //     return
+  //   }
+
+  //   data = async () => {
+  //     await quests.forEach((item) => {
+  //       if (item.complete === false) {
+  //         //console.log(item['qid'])
+
+
+  //       }
+  //     })
+  //     return dataState
+  //   }
+
+
+  //   console.log("data = state")
+  //   console.log(dataState)
+  // }
 
 
 

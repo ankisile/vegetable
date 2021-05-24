@@ -43,6 +43,8 @@ import MyFeed from '../front/myPage/MyFeed';
 import Setting from '../front/myPage/Setting';
 
 
+
+
 const HomeStack = ({ navigation }) => (
     <Stack.Navigator screenOptions={{
         headerShown: false}}>
@@ -115,7 +117,7 @@ const AppStack = (props, { navigation }) => {
                         <MaterialCommunityIcons name="home" color={color} size={26} />
                     ),
                 }} />
-            <Tab.Screen name="Feed" component={FeedStack}
+            <Tab.Screen name="empty" component={EmptyScreen}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="home" color={color} size={26} />
@@ -151,6 +153,8 @@ const AppStack = (props, { navigation }) => {
                         <MaterialCommunityIcons name="account-circle" color={color} size={26} />
                     ),
                 }} />
+
+
         </Tab.Navigator>
     )
 }

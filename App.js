@@ -34,6 +34,10 @@ import CameraScreen from './front/feed/PickCamera';
 
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 
+// firebaseInit.js
+
+const db = firebase.firestore(db)
+
 
 const theme = {
     ...DefaultTheme,

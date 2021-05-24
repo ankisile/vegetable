@@ -1,21 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity, ImageBackground } from "react-native"
 
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80
 export const ITEM_WIDTH =220
 
 const CarouselCardItem = ({ item, index }) => {
+  
+  console.log("카드 확인")
+  console.log(item)
+
   return (
     <TouchableOpacity>
         <View style={styles.container} key={index}>
-      <ImageBackground source={ item.bguri} style={styles.imagebg}>
+      {/* <ImageBackground source={ images.oibg } style={styles.imagebg}>
       <Image
-        source={item.uri }
+        source={item.image}
         style={styles.image}
       />
-      </ImageBackground>
+      </ImageBackground> */}
       
-      <Text style={{color:'gray',fontSize:10,position:'absolute', top:170, left:20}}>{item.categori}</Text>
+      <Text style={{color:'gray',fontSize:10,position:'absolute', top:170, left:20}}>{item.category}</Text>
       <Text style={styles.header}>{item.title}</Text>
       <Text style={styles.body}>{item.content}</Text>
       <Text style={{color:'#007AE9',fontSize:10,position:'absolute', bottom:60, left:20}}>달성시 제공 포인트 {item.point}</Text>
