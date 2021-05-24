@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Button, ImageBackground, Image } from 'react-native'
+import { View, Text, Button, ImageBackground, Image, TouchableOpacity } from 'react-native'
 let imagePath = require('./koonya.png');
 let buycar = require('./Buy.png');
 import { Dimensions } from 'react-native';
@@ -10,14 +10,14 @@ function MarketMain({ navigation }) {
     return (
         <View style={{ flexDirection: "column" }}>
 
-            <View style={{ marginTop: 50, width: Width * 0.9, height: Height * 0.1, alignSelf: 'center', alignItems: 'center' }}>
-                <View style={{ flexDirection: 'row', width: "100%", alignSelf: 'center', justifyContent: 'space-evenly' }}>
-                    <Text style={{ textAlign: "center", marginLeft: '25%' }} >
+            <View style={{ marginTop: 50, width: Width * 0.9, height: Height * 0.1, alignSelf: 'center', }}>
+                <View style={{ flexDirection: 'row', width: "100%", alignSelf: 'center', justifyContent: "space-evenly" }}>
+                    <Text style={{ flex: 1, textAlign: "center", justifyContent: "center", marginLeft: 20 }} >
                         포인트 상점
                     </Text>
                     <View >
                         <Image
-                            style={{ height: 20, width: 20, marginLeft: '90%' }}
+                            style={{ height: 20, width: 20, }}
                             source={buycar}
                         />
                     </View>
@@ -25,7 +25,7 @@ function MarketMain({ navigation }) {
 
 
                 <View
-                    style={{ height: 4, width: 100, marginTop: 5, backgroundColor: "orange" }}>
+                    style={{ height: 4, width: 100, marginTop: 5, backgroundColor: "orange", alignSelf: "center" }}>
                 </View>
                 {/* 첫번째 문단  */}
                 <View style={{ width: Width * 0.9, height: Height * 0.15, alignSelf: 'center', marginTop: 10, }}>
@@ -46,7 +46,7 @@ function MarketMain({ navigation }) {
                             color="#FFDCDC"
                             title="나의 좋아요 보관함" />
                     </View>
-                    <View style={{ flexDirection: "row", height: '100%', width: '51%', }}>
+                    <View style={{ flexDirection: "row", height: '100%', width: '45%', }}>
                         <Image
                             style={{ height: '100%', width: '20%' }}
                             source={require("./star.png")} />
@@ -56,72 +56,107 @@ function MarketMain({ navigation }) {
                     </View>
                 </View>
                 {/* 두번째 문단 살려줘  */}
-               
 
-                <View style={{ width: Width * 0.9, height: Height * 0.1, alignSelf: 'center', marginTop: 10,flexDirection:"row",justifyContent :"space-between" }}>
+
+                <View style={{ width: Width * 0.9, height: Height * 0.1, alignSelf: 'center', marginTop: 10, flexDirection: "row", marginTop: 10,marginBottom :20 }}>
+                    <View style={{ width: "50%", height: " 120%", alignItems: "center" }}>
+                        <ImageBackground
+                            style={{ width: "85%", height: "100%", marginLeft: 15 }}
+                            source={require("./wow.png")}
+                            resizeMode='stretch'
+                        >
+                            <Text style={{ textAlign: "center", marginRight: 20, marginTop: 20,color :"white" }}>기부하기</Text>
+                            <TouchableOpacity
+                             onPress={() => navigation.navigate("DonateMain")} >
+                                
+                                <Text style={{ textAlign: "center", marginRight: 20, marginTop: 10, width: "50%", backgroundColor: "white", alignSelf: "center" }}>more</Text>
+                            </TouchableOpacity>
+                        </ImageBackground>
+                    </View>
+                    <View style={{ width: "50%", height: " 120%", alignItems: "center" }}>
                     <ImageBackground
-                        style={{ width: "50%", height: "100%",marginLeft : "8%" }}  //View를 꽉채우도록
-                        source={require("./wow.png")}  //이미지경로
-                        resizeMode='stretch' // 'cover', 'contain', 'stretch', 'repeat', 'center' 중 선택 
-                    >
-                    </ImageBackground>
-                    <ImageBackground
-                        style={{ width: "50%", height: "100%",marginLeft : "8%" }}  //View를 꽉채우도록
-                        source={require("./wow.png")}  //이미지경로
-                        resizeMode='stretch' // 'cover', 'contain', 'stretch', 'repeat', 'center' 중 선택 
-                    >
-                    </ImageBackground>
+                            style={{ width: "85%", height: "100%", marginLeft: 45 }}
+                            source={require("./wow.png")}
+                            resizeMode='stretch'
+                        >
+                            <Text style={{ textAlign: "center", marginRight: 20, marginTop: 20,color :"white" }}>카페/베이커리</Text>
+                            <TouchableOpacity
+                             onPress={() => navigation.navigate("CafeMain")}>
+                                <Text style={{ textAlign: "center", marginRight: 20, marginTop: 10, width: "50%", backgroundColor: "white", alignSelf: "center" }}>more</Text>
+                            </TouchableOpacity>
+                        </ImageBackground>
+                    </View>
                 </View>
-                <View style={{ width: Width * 0.9, height: Height * 0.1, alignSelf: 'center', marginTop: 10,flexDirection:"row",justifyContent :"space-between" }}>
+                <View style={{ width: Width * 0.9, height: Height * 0.1, alignSelf: 'center', marginTop: 10, flexDirection: "row", marginTop: 10 ,marginBottom :20 }}>
+                    <View style={{ width: "50%", height: " 120%", alignItems: "center" }}>
+                        <ImageBackground
+                            style={{ width: "85%", height: "100%", marginLeft: 15 }}
+                            source={require("./wow.png")}
+                            resizeMode='stretch'
+                        >
+                            <Text style={{ textAlign: "center", marginRight: 20, marginTop: 20,color :"white" }}>뷰티/패션</Text>
+                            <TouchableOpacity>
+                                <Text style={{ textAlign: "center", marginRight: 20, marginTop: 10, width: "50%", backgroundColor: "white", alignSelf: "center" }}>more</Text>
+                            </TouchableOpacity>
+                        </ImageBackground>
+                    </View>
+                    <View style={{ width: "50%", height: " 120%", alignItems: "center" }}>
                     <ImageBackground
-                        style={{ width: "50%", height: "100%",marginLeft : "8%" }}  //View를 꽉채우도록
-                        source={require("./wow.png")}  //이미지경로
-                        resizeMode='stretch' // 'cover', 'contain', 'stretch', 'repeat', 'center' 중 선택 
-                    >
-                    </ImageBackground>
-                    <ImageBackground
-                        style={{ width: "50%", height: "100%",marginLeft : "8%" }}  //View를 꽉채우도록
-                        source={require("./wow.png")}  //이미지경로
-                        resizeMode='stretch' // 'cover', 'contain', 'stretch', 'repeat', 'center' 중 선택 
-                    >
-                    </ImageBackground>
+                            style={{ width: "85%", height: "100%", marginLeft: 45 }}
+                            source={require("./wow.png")}
+                            resizeMode='stretch'
+                        >
+                            <Text style={{ textAlign: "center", marginRight: 20, marginTop: 20,color :"white" }}>외식</Text>
+                            <TouchableOpacity>
+                                <Text style={{ textAlign: "center", marginRight: 20, marginTop: 10, width: "50%", backgroundColor: "white", alignSelf: "center" }}>more</Text>
+                            </TouchableOpacity>
+                        </ImageBackground>
+                    </View>
                 </View>
 
-                <View style={{ width: Width * 0.9, height: Height * 0.1, alignSelf: 'center', marginTop: 10,flexDirection:"row",justifyContent :"space-between" }}>
+                <View style={{ width: Width * 0.9, height: Height * 0.1, alignSelf: 'center', marginTop: 10, flexDirection: "row", marginTop: 10 ,marginBottom :20 }}>
+                    <View style={{ width: "50%", height: " 120%", alignItems: "center" }}>
+                        <ImageBackground
+                            style={{ width: "85%", height: "100%", marginLeft: 15 }}
+                            source={require("./wow.png")}
+                            resizeMode='stretch'
+                        >
+                            <Text style={{ textAlign: "center", marginRight: 20, marginTop: 20,color :"white"}}>편의점</Text>
+                            <TouchableOpacity>
+                                <Text style={{ textAlign: "center", marginRight: 20, marginTop: 10, width: "50%", backgroundColor: "white", alignSelf: "center" }}>more</Text>
+                            </TouchableOpacity>
+                        </ImageBackground>
+                    </View>
+                    <View style={{ width: "50%", height: " 120%", alignItems: "center" }}>
                     <ImageBackground
-                        style={{ width: "50%", height: "100%",marginLeft : "8%" }}  //View를 꽉채우도록
-                        source={require("./wow.png")}  //이미지경로
-                        resizeMode='stretch' // 'cover', 'contain', 'stretch', 'repeat', 'center' 중 선택 
-                    >
-                        
-                    </ImageBackground>
-                    <ImageBackground
-                        style={{ width: "50%", height: "100%",marginLeft : "8%" }}  //View를 꽉채우도록
-                        source={require("./wow.png")}  //이미지경로
-                        resizeMode='stretch' // 'cover', 'contain', 'stretch', 'repeat', 'center' 중 선택 
-                    >
-                    </ImageBackground>
+                            style={{ width: "85%", height: "100%", marginLeft: 45 }}
+                            source={require("./wow.png")}
+                            resizeMode='stretch'
+                        >
+                            <Text style={{ textAlign: "center", marginRight: 20, marginTop: 20 ,color :"white"}}>기타/환급하기</Text>
+                            <TouchableOpacity
+                            onPress={() => navigation.navigate("PaybackMain")}>
+                                <Text style={{ textAlign: "center", marginRight: 20, marginTop: 10, width: "50%", backgroundColor: "white", alignSelf: "center" }}>more</Text>
+                            </TouchableOpacity>
+                        </ImageBackground>
+                    </View>
                 </View>
-               
-
-
-                
             </View>
 
 
 
-        </View>
+        </View >
     )
 }
 
 export default MarketMain
 
 {/* <Button title="기타/환급하기"
-                        onPress={() => navigation.navigate("PaybackMain")} />
+                         />
                         <Button title="카페/베이커리"
-                            onPress={() => navigation.navigate("CafeMain")} />
+                            />
                             <Button title="기부"
-                            onPress={() => navigation.navigate("DonateMain")} />
+                           />
                             <Button title="뷰티/패션" />
                             <Button title="외식" />
                             */}
