@@ -38,21 +38,27 @@ function MarketMain({ navigation }) {
                 </View>
 
                 <View style={{ width: Width * 0.9, height: Height * 0.05, marginTop: 20, flexDirection: "row", marginBottom: 20 }}>
-                    <View style={{ flexDirection: "row", height: '100%', width: '49%' }}>
+                    <View style={{ flexDirection: "row", height: '100%', width: '49%',color:"grey" }}>
                         <Image
                             style={{ height: '100%', width: '20%' }}
                             source={require("./heart.png")} />
-                        <Button
-                            color="#FFDCDC"
-                            title="나의 좋아요 보관함" />
+                       
+                            <TouchableOpacity
+                              >
+                                
+                                <Text style={{ textAlign: "center", marginRight: 20,  width: "100%",height:"100%", backgroundColor: "none",color:"grey",fontSize:Height * 0.04  }}>나의 좋아요 보관함</Text>
+                            </TouchableOpacity>
                     </View>
-                    <View style={{ flexDirection: "row", height: '100%', width: '45%', }}>
+                    <View style={{ flexDirection: "row", height: '100%', width: '45%' }}>
                         <Image
                             style={{ height: '100%', width: '20%' }}
                             source={require("./star.png")} />
-                        <Button
-                            color="#FFDCDC"
-                            title="나의 보유 포인트 확인" />
+                            <TouchableOpacity
+                              >
+                                
+                                <Text style={{ textAlign: "center", marginRight: 20,  width: "100%",height:"100%", backgroundColor: "none",color:"grey",fontSize:Height * 0.04  }}>나의 보유 포인트 확인</Text>
+                            </TouchableOpacity>
+                         
                     </View>
                 </View>
                 {/* 두번째 문단 살려줘  */}
@@ -71,7 +77,7 @@ function MarketMain({ navigation }) {
                                 
                                 <Text style={{ textAlign: "center", marginRight: 20, marginTop: 10, width: "50%", backgroundColor: "white", alignSelf: "center" }}>more</Text>
                             </TouchableOpacity>
-                        </ImageBackground>
+                        </ImageBackground>  
                     </View>
                     <View style={{ width: "50%", height: " 120%", alignItems: "center" }}>
                     <ImageBackground
