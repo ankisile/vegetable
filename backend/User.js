@@ -18,7 +18,8 @@ export const storeUser = () => {
                 try {
                     const data = JSON.stringify(snapshot.data())
                     await AsyncStorage.setItem('currentUser', data)
-                    await AsyncStorage.setItem('point', snapshot.data().point)
+                    const point = JSON.stringify(snapshot.data().point)
+                    await AsyncStorage.setItem('point', point)
                 } catch (error) {
                     console.log('store User error : ' + error)
                 }
@@ -27,25 +28,6 @@ export const storeUser = () => {
                 console.log('user info does not exist')
             }
         })
-
-    firebase.firestore()
-        .collection("users")
-        .doc(firebase.auth().currentUser.uid)
-        .collection("userPoint")
-        .get()
-        .then(async (snapshot) => {
-            const point = snapshot.docs.map((doc) => {
-                var data = doc.data();
-                return data
-            })
-
-            try {
-            } catch (error) {
-                console.log('store point error : ' + error)
-            }
-        })
-        .catch((error) => { console.log("savePoint error : " + error) })
-
 }
 
 
