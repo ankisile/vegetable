@@ -6,6 +6,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
+//초기화
+export const clearData = async () => {
+    await AsyncStorage.delete('currentUser')
+    await AsyncStorage.delete('point')
+    await AsyncStorage.delete('userFollowing')
+
+}
+
 //유저 정보 저장(로컬)
 export const storeUser = () => {
     firebase.firestore()
@@ -89,19 +97,43 @@ export const fetchUserFollowing = () => {
 
 
 //내 퀘스트 불러오기
-export const fetchUserQuests = () => {
-    firebase.firestore()
+export const fetchUserQuests = async () => {
+    const quests = await firebase.firestore()
         .collection("users")
         .doc(firebase.auth().currentUser.uid)
         .collection("userQuests")
         .get()
         .then((snapshot) => {
             const userQuests = snapshot.docs.map((doc) => {
-                var quest = doc.uid
+                var quest = doc.id
                 var complete = doc.data()
                 return { quest, ...complete }
             })
+
+            return userQuests
         })
+
+    const questsInfo = await quests.map(async (item) => {
+        if (item.complete === false) {
+            var questInfo = await firebase.firestore()
+                .collection("quests")
+                .doc(item['qid'])
+                .get()
+                .then((snapshot) => {
+                    // console.log("snapshot")
+                    // console.log(snapshot.data())
+                    var questInfo = snapshot.data()
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+            return questInfo
+        }
+    })
+
+    console.log("fetch function 내부")
+    console.log(questsInfo)
+
 
 }
 
@@ -142,26 +174,26 @@ export const addPoint = async (amount) => {
     try {
         point = await AsyncStorage.getItem('point')
     } catch (err) {
-        console.log("fetch Point error : "  + err)
+        console.log("fetch Point error : " + err)
     }
 
     //포인트 증가
     point = Number(point) + amount
-    
+
     //로컬에 저장
     try {
         await AsyncStorage.setItem('point', point)
     } catch {
-        console.log("save Point error : "  + err)
+        console.log("save Point error : " + err)
     }
 
     //DB에 저장
     firebase.firestore()
-    .collection("users")
-    .doc(firebase.auth().currentUser.uid)
-    .update({
-        point : point
-    })
+        .collection("users")
+        .doc(firebase.auth().currentUser.uid)
+        .update({
+            point: point
+        })
 
     //유저 정보 재저장
     firebase.firestore()
@@ -191,19 +223,19 @@ export const levelUp = () => {
     let level;
 
     firebase.firestore()
-    .collection(user)
-    .doc(firebase.auth().currentUser.uid)
-    .get()
-    .then((snapshot) => {
-        level = snapshot.data().level
-    })
+        .collection(user)
+        .doc(firebase.auth().currentUser.uid)
+        .get()
+        .then((snapshot) => {
+            level = snapshot.data().level
+        })
 
     firebase.firestore()
-    .collection(user)
-    .doc(firebase.auth().currentUser.uid)
-    .update({
-        level : level + 1
-    })
+        .collection(user)
+        .doc(firebase.auth().currentUser.uid)
+        .update({
+            level: level + 1
+        })
 
     //유저 정보 재저장
     firebase.firestore()

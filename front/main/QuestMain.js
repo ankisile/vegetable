@@ -20,91 +20,63 @@ require('firebase/firestore')
 import Carousel from 'react-native-snap-carousel'
 import CardItem, { SLIDER_WIDTH, ITEM_WIDTH } from './CardItem'
 
+import { fetchUserQuests } from '../../backend/User'
+
 const width = Dimensions.get('window').width;
 
 const QuestMain = ({ navigation }) => {
 
-  const [quests, setQuests] = useState([])
-  const [dataState, setData] = useState([])
+  // const [quests, setQuests] = useState([])
+  // const [dataState, setData] = useState([])
 
-  var data = []
+  // useEffect(() => {
 
-  useEffect(() => {
+  //   if (dataState.length === 0) {
+  //     firebase.firestore()
+  //       .collection("users")
+  //       .doc(firebase.auth().currentUser.uid)
+  //       .collection("userQuests")
+  //       .get()
+  //       .then((snapshot) => {
+  //         let quest = snapshot.docs.map((doc) => {
+  //           var qid = doc.id
+  //           var complete = doc.data()
+  //           return { qid, ...complete }
+  //         })
+  //         setQuests(quest);
+  //         //console.log(quests)
+  //       })
+  //       .catch((err) => {
+  //         console.log(err)
+  //       })
 
-    firebase.firestore()
-      .collection("users")
-      .doc(firebase.auth().currentUser.uid)
-      .collection("userQuests")
-      .get()
-      .then((snapshot) => {
-        let quest = snapshot.docs.map((doc) => {
-          var qid = doc.id
-          var complete = doc.data()
-          return { qid, ...complete }
-        })
-        setQuests(quest);
-        //console.log(quests)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-
-    quests.forEach((item) => {
-      if (item.complete === false) {
-        //console.log(item['qid'])
-        firebase.firestore()
-          .collection("quests")
-          .doc(item['qid'])
-          .get()
-          .then((snapshot) => {
-            // console.log("snapshot")
-            // console.log(snapshot.data())
-            let tmp = dataState
-
-            tmp.push(snapshot.data())
-            setData(tmp)
-            console.log("data inner")
-            console.log(dataState)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-
-      }
-    })
-
-
-  }, [])
-
-  // const settingData = async () => {
-
-  //   await 
-
-  //   //console.log(quests)
-
-  //   if (data.length > 0) {
-  //     return
-  //   }
-
-  //   data = async () => {
-  //     await quests.forEach((item) => {
+  //     quests.forEach((item) => {
   //       if (item.complete === false) {
   //         //console.log(item['qid'])
+  //         firebase.firestore()
+  //           .collection("quests")
+  //           .doc(item['qid'])
+  //           .get()
+  //           .then((snapshot) => {
+  //             let tmp = dataState
 
-
+  //             tmp.push(snapshot.data())
+  //             setData(tmp)
+  //           })
+  //           .catch((err) => {
+  //             console.log(err)
+  //           })
   //       }
   //     })
-  //     return dataState
   //   }
 
 
-  //   console.log("data = state")
-  //   console.log(dataState)
-  // }
+
+  // }, [])
 
 
 
-  const datasample = [
+  const data = [
     {
       bguri: images.oibg,
       uri: images.onionb,

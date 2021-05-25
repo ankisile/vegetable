@@ -24,14 +24,15 @@ export const makeQuest = (questInfo) => {
 export const fetchQuests = (category) => {
     firebase.firestore()
         .collection("quests")
-        .doc(category)
+        .where("category", "==", category)
         .get()
-        .then(() => {
+        .then((snapshot) => {
             let quests = snapshot.docs.map(doc => {
                 const data = doc.data();
                 const id = doc.id;
                 return { id, ...data }
             })
+            return quests
         })
 }
 
