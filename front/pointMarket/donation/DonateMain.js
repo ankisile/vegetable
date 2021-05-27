@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react'
 import { View, Text, Button, TextInput, Picker } from 'react-native'
 
@@ -33,18 +32,6 @@ export default function DonateMain({ navigation }) {
                         amount: amount,
                         destination : item
                     })}} />
-=======
-import React from 'react'
-import { View, Text, Button } from 'react-native'
-
-export default function DonateMain({navigation}) {
-    return (
-        <View>
-            <Text>보유 포인트 : 000점</Text>
-            <Text>~~에 __원 기부합니다.</Text>
-            <Button title="기부하기"
-            onPress={() => navigation.navigate("DonationResult")}/>
->>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
             <Text>History</Text>
             <Text>__님이 ~~에 00원을 기부했습니다.</Text>
         </View>

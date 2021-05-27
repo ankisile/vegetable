@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import { Button,View,Text, TextInput, SafeAreaView, } from 'react-native'
-
-function sample() {
-    return (
-        
-        <SafeAreaView>
-            <Text>  퀘스트 제목 설정  </Text>
-            
-            <TextInput></TextInput>
-            
-           
-            <Text>  퀘스트 세부 내용 </Text>
-            <TextInput></TextInput>
-            
-        </SafeAreaView>
-    )
-}
-
-export default sample
-=======
 import React from 'react';
 import {
     Animated,
@@ -229,4 +207,3 @@ const styles = StyleSheet.create({
 });
 
 export default Tutorial;
->>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3

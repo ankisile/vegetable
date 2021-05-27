@@ -29,16 +29,6 @@ if(firebase.apps.length === 0){
 import SignUp from "./front/landing/SignUp";
 import SignIn from "./front/landing/SignIn";
 import Tutorial from "./front/landing/Tutorial";
-<<<<<<< HEAD
-import AppStack from './navigation/Appstack';
-import CameraScreen from './front/feed/PickCamera';
-
-import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-
-// firebaseInit.js
-
-const db = firebase.firestore(db)
-=======
 import AppStack from './navigation/AppStack';
 import CameraScreen from './front/feed/PickCamera';
 
@@ -55,7 +45,6 @@ import Experience from './front/main/Experience';
 import Epic from './front/main/Epic';
 import QuestDetail from './front/main/QuestDetail';
 import Participate from './front/main/Participate';
->>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
 
 
 const theme = {
@@ -85,19 +74,6 @@ export class App extends Component {
       }
       componentDidMount() {
         this.loadFonts();
-<<<<<<< HEAD
-        // firebase.auth().onAuthStateChanged((user) => {
-        //   if (!user) {
-        //     this.setState({
-        //       loggedIn: false,
-        //     })
-        //   } else {
-        //     this.setState({
-        //       loggedIn: true,
-        //     })
-        //   }
-        // })
-=======
         firebase.auth().onAuthStateChanged((user) => {
           if (!user) {
             this.setState({
@@ -109,7 +85,6 @@ export class App extends Component {
             })
           }
         })
->>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
       }
 
     render() {
@@ -117,29 +92,13 @@ export class App extends Component {
         if (!loaded) {
             return null;
         }
-<<<<<<< HEAD
-        if (!loggedIn) {
-=======
         
->>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
             return (
               <NavigationContainer theme={theme}>
                  <Stack.Navigator
                         screenOptions={{
                             headerShown: false
                         }}
-<<<<<<< HEAD
-                        initialRouteName={Tutorial}
-                    >
-                    <Stack.Screen name="SignIn" component={SignIn} />   
-                    <Stack.Screen name="SignUp" component={SignUp} />
-                    <Stack.Screen name="Tutorial" component={Tutorial}/>
-                    </Stack.Navigator>
-              </NavigationContainer>
-            );
-        }
-        return(
-=======
                         initialRouteName={'LandingPage'}
                     >
                     <Stack.Screen name="LandingPage" component={LandingPage} />   
@@ -167,7 +126,6 @@ export class App extends Component {
             );
         
         /*return(
->>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
             <Provider store={store}>
             <NavigationContainer theme={theme}>
                 <Stack.Navigator screenOptions={{
@@ -181,11 +139,7 @@ export class App extends Component {
             </NavigationContainer>
             </Provider>
         )
-<<<<<<< HEAD
-
-=======
 */
->>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
     }
 }
 
@@ -237,8 +191,4 @@ const App = () => {
 }
 
 export default App;
-<<<<<<< HEAD
 */
-=======
-*/
->>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
