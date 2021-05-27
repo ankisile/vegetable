@@ -1,5 +1,6 @@
 import React from 'react'
 
+<<<<<<< HEAD
 let imagePath = require('./koonya.png'); //imagePath변수에 llama경로가 저장된다
 import { StyleSheet, View, Text, Image, TextInput, Button, } from 'react-native'
 
@@ -86,3 +87,16 @@ export default function Setting() {
                 style={{ height: 106, width: 106, marginLeft: '30%', marginTop: -5 }}
                 source={imagePath}
             />  */}
+=======
+import { StyleSheet, View, Text, Image, FlatList, Button } from 'react-native'
+
+export default function Setting() {
+    return (
+        <View>
+            <Text>Setting</Text>
+
+
+        </View>
+    )
+}
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3

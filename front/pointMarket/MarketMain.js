@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { View, Text, Button, ImageBackground, Image, TouchableOpacity } from 'react-native'
 let imagePath = require('./koonya.png');
 let buycar = require('./Buy.png');
@@ -154,11 +155,30 @@ function MarketMain({ navigation }) {
 
 
         </View >
+=======
+import { View, Text, Button } from 'react-native'
+
+function MarketMain({ navigation }) {
+    return (
+        <View>
+            <Text>광고 이미지</Text>
+            <Button title="기부"
+                onPress={() => navigation.navigate("DonateMain")} />
+            <Button title="카페/베이커리"
+                onPress={() => navigation.navigate("CafeMain")} />
+            <Button title="뷰티/패션"/>
+            <Button title="외식"/>
+            <Button title="편의점"/>
+            <Button title="기타/환급하기"
+                onPress={() => navigation.navigate("PaybackMain")} />
+        </View>
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
     )
 }
 
 export default MarketMain
 
+<<<<<<< HEAD
 {/* <Button title="기타/환급하기"
                          />
                         <Button title="카페/베이커리"
@@ -168,3 +188,5 @@ export default MarketMain
                             <Button title="뷰티/패션" />
                             <Button title="외식" />
                             */}
+=======
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3

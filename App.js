@@ -29,6 +29,7 @@ if(firebase.apps.length === 0){
 import SignUp from "./front/landing/SignUp";
 import SignIn from "./front/landing/SignIn";
 import Tutorial from "./front/landing/Tutorial";
+<<<<<<< HEAD
 import AppStack from './navigation/Appstack';
 import CameraScreen from './front/feed/PickCamera';
 
@@ -37,6 +38,24 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 // firebaseInit.js
 
 const db = firebase.firestore(db)
+=======
+import AppStack from './navigation/AppStack';
+import CameraScreen from './front/feed/PickCamera';
+
+import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import ChooseChar from './front/landing/ChooseChar';
+import CharDetail from './front/landing/CharDetail';
+import QuestMain from './front/main/QuestMain'
+import TabScreen from './front/TabScreen';
+import LandingPage from './front/landing/LandingPage';
+import Recipe from './front/main/Recipe';
+import Meal from './front/main/Meal';
+import Habit from './front/main/Habit';
+import Experience from './front/main/Experience';
+import Epic from './front/main/Epic';
+import QuestDetail from './front/main/QuestDetail';
+import Participate from './front/main/Participate';
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
 
 
 const theme = {
@@ -66,6 +85,7 @@ export class App extends Component {
       }
       componentDidMount() {
         this.loadFonts();
+<<<<<<< HEAD
         // firebase.auth().onAuthStateChanged((user) => {
         //   if (!user) {
         //     this.setState({
@@ -77,6 +97,19 @@ export class App extends Component {
         //     })
         //   }
         // })
+=======
+        firebase.auth().onAuthStateChanged((user) => {
+          if (!user) {
+            this.setState({
+              loggedIn: false,
+            })
+          } else {
+            this.setState({
+              loggedIn: true,
+            })
+          }
+        })
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
       }
 
     render() {
@@ -84,13 +117,18 @@ export class App extends Component {
         if (!loaded) {
             return null;
         }
+<<<<<<< HEAD
         if (!loggedIn) {
+=======
+        
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
             return (
               <NavigationContainer theme={theme}>
                  <Stack.Navigator
                         screenOptions={{
                             headerShown: false
                         }}
+<<<<<<< HEAD
                         initialRouteName={Tutorial}
                     >
                     <Stack.Screen name="SignIn" component={SignIn} />   
@@ -101,6 +139,35 @@ export class App extends Component {
             );
         }
         return(
+=======
+                        initialRouteName={'LandingPage'}
+                    >
+                    <Stack.Screen name="LandingPage" component={LandingPage} />   
+                    <Stack.Screen name="SignIn" component={SignIn} />   
+                    <Stack.Screen name="SignUp" component={SignUp} />
+                    <Stack.Screen name="Tutorial" component={Tutorial}/>
+                    <Stack.Screen name="ChooseChar" component={ChooseChar}/>
+                    <Stack.Screen name="CharDetail" component={CharDetail}/>
+                    
+                    <Stack.Screen name="TabScreen" component={TabScreen} />
+                    <Stack.Screen name="QuestMain" component={QuestMain} />
+                    <Stack.Screen name="Meal" component={Meal} />
+                    <Stack.Screen name="Recipe" component={Recipe} />
+                    <Stack.Screen name="Habit" component={Habit} />
+                    <Stack.Screen name="Experience" component={Experience} />
+                    <Stack.Screen name="Epic" component={Epic} />
+                    <Stack.Screen name="QuestDetail" component={QuestDetail} />
+                    <Stack.Screen name="Participate" component={Participate} />
+
+
+                
+                  </Stack.Navigator>
+                    
+              </NavigationContainer>
+            );
+        
+        /*return(
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
             <Provider store={store}>
             <NavigationContainer theme={theme}>
                 <Stack.Navigator screenOptions={{
@@ -114,7 +181,11 @@ export class App extends Component {
             </NavigationContainer>
             </Provider>
         )
+<<<<<<< HEAD
 
+=======
+*/
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
     }
 }
 
@@ -166,4 +237,8 @@ const App = () => {
 }
 
 export default App;
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3

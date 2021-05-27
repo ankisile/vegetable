@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { StyleSheet, View, Text, Image, FlatList, Button, TextInput } from 'react-native'
 
 
@@ -51,6 +52,19 @@ export default function MyFeed({ navigation }) {
             <View style={{ width: 565, backgroundColor: "black", height: "70%", alignItems: "center", backgroundColor: "orange",alignSelf : 'center' }}>
                       
            </View>
+=======
+import { StyleSheet, View, Text, Image, FlatList, Button } from 'react-native'
+
+export default function MyFeed({navigation}) {
+    return (
+        <View>
+            <Text>
+                profile
+            </Text> 
+            <Text>
+                Have to make button
+            </Text>
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
 
         </View>
     )

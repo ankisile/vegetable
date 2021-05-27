@@ -14,6 +14,7 @@ import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
 //import SocialButton from "../../constants/SocialButton"
 import firebase from 'firebase'
 
+<<<<<<< HEAD
 
 export class SignIn extends Component {
     constructor(props) {
@@ -37,6 +38,10 @@ export class SignIn extends Component {
                 console.log(error)
             })
     }
+=======
+export class SignIn extends Component {
+    
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
 
     render() {
 
@@ -126,7 +131,11 @@ export class SignIn extends Component {
             style={{ flex: 1 }}
         >
             <View
+<<<<<<< HEAD
                 style={{ flex: 1 }}
+=======
+                style={{ flex: 1 , marginTop:50}}
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
             >
                 <ScrollView>
                     {renderLogo()}
@@ -181,10 +190,15 @@ export class SignIn extends Component {
                             height: 40,
                             backgroundColor: COLORS.white,
                             alignItems: 'center',
+<<<<<<< HEAD
                             borderLeftColor: 'black',
                             borderRightColor: 'black',
                             borderTopColor: 'black',
                             borderBottomColor: 'black', 
+=======
+                            borderWidth:1,
+                            borderColor: 'orange', 
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
                             justifyContent: 'center'
                             
                         }}
@@ -194,6 +208,7 @@ export class SignIn extends Component {
                         </TouchableOpacity>
                     </View>                 
                     
+<<<<<<< HEAD
 {/*}                     <View>
                     <SocialButton
                         buttonTitle="Sign In with Facebook"
@@ -212,6 +227,9 @@ export class SignIn extends Component {
                         //onPress={() => googleLogin()}
                     />
                     </View> */}
+=======
+
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
                     <View style={{ marginTop: SIZES.padding * 3,
                                     marginHorizontal: SIZES.padding * 8,}}>
                         <TouchableOpacity
@@ -223,7 +241,11 @@ export class SignIn extends Component {
                             justifyContent: 'center'
                             
                         }}
+<<<<<<< HEAD
                         onPress={() => this.onSignIn()}
+=======
+                        onPress={() => this.props.navigation.navigate("QuestMain")}
+>>>>>>> eb10f73ff0de6513d29ea88302dac870a2fed6c3
                     >
                         <Text style={{ color: COLORS.white, ...FONTS.h4 }}>LogIn</Text>
                         </TouchableOpacity>
