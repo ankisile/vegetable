@@ -67,7 +67,7 @@ const RequirementDetail = ({ label, days }) => {
 
 const Meal = ({ navigation }) => {
 
-    const [quests, setQuests] = useState([{title : ""}])
+    const [quests, setQuests] = useState([{title : ""}, {title : ""}, {title : ""}])
 
     useEffect(() => {
         
@@ -85,6 +85,7 @@ const Meal = ({ navigation }) => {
                         return { id, ...data }
                     })
                     setQuests(quests)
+                    console.log(quests)
 
                 })
                 .catch((err) => {
@@ -165,11 +166,11 @@ const Meal = ({ navigation }) => {
                         days="5"
                     />
                     <RequirementDetail
-                        label="Water"
+                        label={quests[1]['title']}
                         days="5"
                     />
                     <RequirementDetail
-                        label="dd"
+                        label={quests[2]['title']}
                         days="5" />
                     <RequirementDetail
                         label="Soil"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     StyleSheet,
     View,
@@ -12,6 +12,8 @@ import {
 import { icons, images, COLORS, SIZES, FONTS } from '../../constants';
 import ActionButton from 'react-native-action-button';
 
+import firebase from 'firebase'
+require('firebase/firestore')
 
 const RequirementDetail = ({ label, days }) => {
     return (
@@ -62,6 +64,33 @@ const RequirementDetail = ({ label, days }) => {
 }
 
 const Habit = ({ navigation }) => {
+
+    const [quests, setQuests] = useState([{title : ""}, {title : ""}, {title : ""}])
+
+
+    useEffect(() => {
+        
+        if(quests[0]['title'] === ""){
+            firebase.firestore()
+                .collection("quests")
+                .where("category", "==", "habit")
+                .get()
+                .then((snapshot) => {
+                    console.log(snapshot.docs[0].data())
+
+                    let quests = snapshot.docs.map(doc => {
+                        const data = doc.data();
+                        const id = doc.id;
+                        return { id, ...data }
+                    })
+                    setQuests(quests)
+
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+    }, [quests])
 
     // Render
 
@@ -131,15 +160,15 @@ const Habit = ({ navigation }) => {
             <ScrollView style={{height:570}}>
             <View style={{ flex: 2.5, paddingHorizontal: SIZES.padding*5, justifyContent: 'space-around' }}>
                 <RequirementDetail
-                    label="Sunlight"
+                    label={quests[0]['title']}
                     days="5"
                 />
                 <RequirementDetail
-                    label="Water"
+                    label={quests[1]['title']}
                     days="5"
                                     />
                 <RequirementDetail
-                    label="dd"
+                    label={quests[2]['title']}
                     days="5"                />
                 <RequirementDetail
                     label="Soil"
