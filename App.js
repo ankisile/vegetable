@@ -66,17 +66,17 @@ export class App extends Component {
       }
       componentDidMount() {
         this.loadFonts();
-        firebase.auth().onAuthStateChanged((user) => {
-          if (!user) {
-            this.setState({
-              loggedIn: false,
-            })
-          } else {
-            this.setState({
-              loggedIn: true,
-            })
-          }
-        })
+        // firebase.auth().onAuthStateChanged((user) => {
+        //   if (!user) {
+        //     this.setState({
+        //       loggedIn: false,
+        //     })
+        //   } else {
+        //     this.setState({
+        //       loggedIn: true,
+        //     })
+        //   }
+        // })
       }
 
     render() {

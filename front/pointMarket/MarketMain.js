@@ -46,7 +46,8 @@ function MarketMain({ navigation }) {
                             <TouchableOpacity
                               >
                                 
-                                <Text style={{ textAlign: "center", marginRight: 20,  width: "100%",height:"100%", backgroundColor: "none",color:"grey",fontSize:Height * 0.04  }}>나의 좋아요 보관함</Text>
+                                <Text style={{ textAlign: "center", marginRight: 20,  width: "100%",height:"100%", backgroundColor: "none",color:"grey",fontSize:Height * 0.02  }}>
+                                    나의 좋아요 보관함</Text>
                             </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: "row", height: '100%', width: '45%' }}>
@@ -56,7 +57,8 @@ function MarketMain({ navigation }) {
                             <TouchableOpacity
                               >
                                 
-                                <Text style={{ textAlign: "center", marginRight: 20,  width: "100%",height:"100%", backgroundColor: "none",color:"grey",fontSize:Height * 0.04  }}>나의 보유 포인트 확인</Text>
+                                <Text style={{ textAlign: "center", marginRight: 20,  width: "100%",height:"100%", backgroundColor: "none",color:"grey",fontSize:Height * 0.02  }}>
+                                    나의 보유 포인트 확인</Text>
                             </TouchableOpacity>
                          
                     </View>
