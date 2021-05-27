@@ -38,6 +38,14 @@ import CharDetail from './front/landing/CharDetail';
 import QuestMain from './front/main/QuestMain'
 import TabScreen from './front/TabScreen';
 import LandingPage from './front/landing/LandingPage';
+import Recipe from './front/main/Recipe';
+import Meal from './front/main/Meal';
+import Habit from './front/main/Habit';
+import Experience from './front/main/Experience';
+import Epic from './front/main/Epic';
+import QuestDetail from './front/main/QuestDetail';
+import Participate from './front/main/Participate';
+
 
 const theme = {
     ...DefaultTheme,
@@ -102,6 +110,15 @@ export class App extends Component {
                     
                     <Stack.Screen name="TabScreen" component={TabScreen} />
                     <Stack.Screen name="QuestMain" component={QuestMain} />
+                    <Stack.Screen name="Meal" component={Meal} />
+                    <Stack.Screen name="Recipe" component={Recipe} />
+                    <Stack.Screen name="Habit" component={Habit} />
+                    <Stack.Screen name="Experience" component={Experience} />
+                    <Stack.Screen name="Epic" component={Epic} />
+                    <Stack.Screen name="QuestDetail" component={QuestDetail} />
+                    <Stack.Screen name="Participate" component={Participate} />
+
+
                 
                   </Stack.Navigator>
                     

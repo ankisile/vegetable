@@ -106,7 +106,7 @@ const Habit = ({ navigation }) => {
                     left: 170,
                     right: SIZES.padding}}>
                     <ImageBackground
-                        source={images.oframe}
+                        source={images.cframe}
                         style={{width: 210,
                             height: 220}}
                     >
@@ -188,7 +188,7 @@ const Habit = ({ navigation }) => {
             {renderHeader()}
             <ActionButton
                 buttonColor="rgba(231,76,60,1)"
-                onPress={() => { navigation.navigate("MakeQuestDetail")}}
+                //onPress={() => { navigation.navigate("MakeQuestDetail")}}
                 />
         </View>
        

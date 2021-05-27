@@ -32,6 +32,10 @@ const cframe = require("../assets/images/cframe.png");
 const qvecos = require("../assets/images/QVECOs.png");
 const lv2 = require("../assets/images/lv2.png");
 const lv3 = require("../assets/images/lv3.png");
+const profile = require("../assets/images/profile.png");
+export const foodimg = require("../assets/images/foodimg.jpg");
+const foodimg1 = require("../assets/images/foodimg1.png");
+const foodimg2 = require("../assets/images/foodimg2.png");
 
 
 export const onboarding1 = require("../assets/images/girl-with-plant-2194197-0.png");
@@ -53,6 +57,6 @@ export default {
     onion,
     bgca, bge, bgpo, bgpum, carrot, epic, potato, pumkin,onionb,oframe,oibg,
     pink,qveco,chob,qvecos,chpb,chpob,chcb,pumkinb,potatob,carrotb,choosebg,
-    lv2,lv3,pframe,poframe,cframe,eframe
+    lv2,lv3,pframe,poframe,cframe,eframe, foodimg, foodimg1,foodimg2,profile
 
 }

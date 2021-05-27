@@ -42,7 +42,7 @@ const RequirementDetail = ({ label, days }) => {
                     <Text style={{ paddingHorizontal:5, color: COLORS.black, ...FONTS.body3 }}>{label}</Text>
                 </View>
                 
-                <TouchableOpacity
+                <View
                     style={{
                             width:120,
                             height: 20,
@@ -52,10 +52,10 @@ const RequirementDetail = ({ label, days }) => {
                             justifyContent: 'center',
                             marginBottom : SIZES.padding*1,
                         }}
-                        onPress={() => console.log('hi')}
+                        onPress={() => navigation.navigate("QuestDetail")}
                     >
                         <Text style={{ color: COLORS.white, ...FONTS.body5 }}>상세보기</Text>
-                </TouchableOpacity>
+                </View>
             </View>
         </View>
     )
@@ -130,10 +130,12 @@ const Meal = ({ navigation }) => {
         return (
             <ScrollView style={{height:570}}>
             <View style={{ flex: 2.5, paddingHorizontal: SIZES.padding*5, justifyContent: 'space-around' }}>
+                <TouchableOpacity onPress={() => navigation.navigate("QuestDetail")}>
                 <RequirementDetail
                     label="Sunlight"
                     days="5"
                 />
+                </TouchableOpacity>
                 <RequirementDetail
                     label="Water"
                     days="5"
@@ -188,7 +190,7 @@ const Meal = ({ navigation }) => {
             <ActionButton
               style={{elevation:8}}
               buttonColor="rgba(231,76,60,1)"
-              onPress={() => navigation.navigate("MakeQuestDetail")}
+              //onPress={() => navigation.navigate("MakeQuestDetail")}
             />
             
            

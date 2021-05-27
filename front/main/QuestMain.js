@@ -115,7 +115,7 @@ const QuestMain = ({navigation}) =>{
                 </View>
             </TouchableOpacity> 
             <TouchableOpacity style={styles.border} 
-                onPress={() => navigation.navigate("Meal")}>
+                onPress={() => navigation.navigate("Experience")}>
                 <View style={{alignItems:'flex-start'}}>
                     <ImageBackground source={images.bgpo} style={{width: 110,
                             height: 110}}>
@@ -135,7 +135,7 @@ const QuestMain = ({navigation}) =>{
                 </View>
             </TouchableOpacity> 
             <TouchableOpacity style={styles.border} 
-                onPress={() => navigation.navigate("Meal")}>
+                onPress={() => navigation.navigate("Habit")}>
                 <View style={{alignItems:'flex-start'}}>
                     <ImageBackground source={images.bgca} 
                         style={{width: 110,
@@ -156,7 +156,7 @@ const QuestMain = ({navigation}) =>{
                 </View>
             </TouchableOpacity> 
             <TouchableOpacity style={styles.border} 
-                onPress={() => navigation.navigate("Meal")}>
+                onPress={() => navigation.navigate("Epic")}>
                 <View style={{alignItems:'flex-start'}}>
                     <ImageBackground source={images.bge} style={{width: 110,
                             height: 110}}>
@@ -233,12 +233,25 @@ const QuestMain = ({navigation}) =>{
                 opacity: Animated.add(0.1, Animated.multiply(fall, 1.0)),
             }}>
                 <View style={{marginTop:100, marginHorizontal:60}}>
-                <Text style={{ color:'#407B69',fontSize:16, fontWeight:'bold'}}>십이간지님, 안녕하세요!</Text>
+                  <View style={{flexDirection:'row'}}>
+                    <Image source={images.profile} resizeMode="contain"/>
+                  <View >
+                  <Text style={{ color:'#407B69',fontSize:16, fontWeight:'bold'}}>십이간지님, 안녕하세요!</Text>
                 <Text style={{ color:COLORS.gray,...FONTS.body5}}>퀘스트를 함께 달성하세요</Text>
-                <TouchableOpacity style={{flexDirection:'row', paddingTop:10}}>
-                  <Image source={icons.heart}/>
-                  <Text style={{ color:COLORS.gray, fontSize:10}}>  퀘스트 좋아요 보관함</Text>
-                </TouchableOpacity>
+                  </View>
+                  </View>
+                  
+                
+                <View>
+                  <TouchableOpacity style={{flexDirection:'row', paddingTop:10,paddingHorizontal:10}}>
+                    <Text style={{ color:COLORS.gray, fontSize:10}}> 로그아웃</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={{flexDirection:'row', paddingTop:10, paddingHorizontal:10}}>
+                    <Image source={icons.heart}/>
+                    <Text style={{ color:COLORS.gray, fontSize:10}}>  퀘스트 좋아요 보관함</Text>
+                  </TouchableOpacity>
+
+                </View>
                 </View>
                 <View style={{
                   alignItems:'center', 
