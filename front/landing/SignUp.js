@@ -373,7 +373,7 @@ export class SignUp extends Component {
                                 }
                             </View>
                             {/* Full Name */}
-                            <View style={{ marginTop: SIZES.padding * 3 }}>
+                            {/*<View style={{ marginTop: SIZES.padding * 3 }}>
                                 <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Level</Text>
                                 <Picker
                                     style={{ height: 50, width: 250 }}
@@ -385,7 +385,7 @@ export class SignUp extends Component {
                                     <Picker.Item label="ㅇㅇㅇ테리언" value="2" />
                                     <Picker.Item label="333테리언" value="3" />
                                 </Picker>
-                            </View>
+                            </View>*/}
 
 
                         </View>

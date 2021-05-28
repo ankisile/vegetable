@@ -161,10 +161,12 @@ const Meal = ({ navigation }) => {
         return (
             <ScrollView style={{ height: 570 }}>
                 <View style={{ flex: 2.5, paddingHorizontal: SIZES.padding * 5, justifyContent: 'space-around' }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("QuestDetail") }}>
                     <RequirementDetail
                         label={quests[0]['title']}
                         days="5"
                     />
+                    </TouchableOpacity>
                     <RequirementDetail
                         label={quests[1]['title']}
                         days="5"

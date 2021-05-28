@@ -26,46 +26,35 @@ const QuestMain = ({navigation}) =>{
         {
           bguri:images.oibg,
           uri: images.onionb,
-          title: 'Lorem ipsum dolor sit amet',
-          content: 'Neque porro quisquam est qui dolorem ipsum quia ',
+          title: '일주일 동안 무지개 색 채소 한 개씩 먹어보기',
+          content: '일주일 동안 무지개 색 채소를 한 개씩 먹고 인증하는 퀘스트 입니다.',
           point: 500,
           categori: '식사'
         },
         {          
-          bguri:images.oframe,
-          uri: 'https://i.imgur.com/Pz2WYAc.jpg',
-          title: 'Lorem ipsum ',
-          content: 'Neque porro quisquam est qui dolorem ipsum ',
+          bguri:images.pframe,
+          uri: images.pumkinb,
+          title: '나만의 채식 레시피 추천하기 ',
+          content: '일주일 동안 무지개 색 채소를 한 개씩 먹고 인증하는 퀘스트 입니다.',
           point: 500,
           categori: '식사'
         },
         {
-          bguri:images.oframe,
-
-          uri: 'https://i.imgur.com/IGRuEAa.jpg',
-          title: 'Lorem ipsum dolor',
-          content: 'Neque porro quisquam est qui',
+          bguri:images.cframe,
+          uri: images.carrotb,
+          title: '나만의 채식 레시피 추천하기 ',
+          content: '일주일 동안 무지개 색 채소를 한 개씩 먹고 인증하는 퀘스트 입니다.',
           point: 500,
           categori: '식사'
         },
         {
-          bguri:images.oframe,
-
-          uri: 'https://i.imgur.com/fRGHItn.jpg',
+          bguri:images.poframe,
+          uri: images.potatob,
           title: 'Lorem ipsum dolor',
           content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet',
           point: 500,
           categori: '식사'
         },
-        {
-          bguri:images.oframe,
-
-          uri: 'https://i.imgur.com/WmenvXr.jpg',
-          title: 'Lorem ipsum ',
-          content: 'Neque porro quisquam est qui dolorem ipsum quia dolor ',
-          point: 500,
-          categori: '식사'
-        }
       ];
     
     
